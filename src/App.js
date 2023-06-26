@@ -12,7 +12,7 @@ function App() {
       {/* <Route exact path = '/About' element = {<About />} />
       <Route exact path = '/Form' element = {<Form />} />
       <Route exact path = '/News' element = {<News />} />
-      <Route exact path = '/Admin' element = {<Admin />} /> */}
+      <Route exact path = '/MembersLogin' element = {<MembersLogin />} /> */}
 
       </Routes>
     </Router>

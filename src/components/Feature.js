@@ -1,9 +1,8 @@
-import lake from '../images/stock-lake.jpeg'
 
-const Feature = () => {
+const Feature = ({image,alt}) => {
   return (
-    <div className="container">
-    <img src={lake}></img>
+    <div className="conatainer mx-auto">
+    <img className='w-full mx-auto' src={image} alt={alt}></img>
     </div>
   )
 }

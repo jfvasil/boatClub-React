@@ -6,7 +6,7 @@ const location = useLocation()
 
   return (
     <>
-    <header className="text-gray-600 body-font">
+    <header className="text-gray-600">
   <div className='container mx-auto flex p-5 flex-row justify-center'>
   <h1 className="flex  title-font font-medium items-center justify-center text-gray-900  ml-6"> 
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
@@ -25,7 +25,7 @@ const location = useLocation()
       <Link to = '/' className={`mr-10 hover:text-gray-900 ${location.pathname === '/' ? 'underline' : ''}`}>Home</Link>
       <Link to = 'About' className={`mr-10 hover:text-gray-900${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
       <Link to = '/Form' className={`mr-10 hover:text-gray-900${location.pathname === '/Form' ? 'underline' : ''}`}>Join The Club</Link>
-      <Link to = '/News' className={`hover:text-gray-900${location.pathname === '/News' ? 'underline' : ''}`}>News</Link>
+      <Link to = '/MembersLogin' className={`hover:text-gray-900${location.pathname === '/MembersLogin' ? 'underline' : ''}`}>Members Login</Link>
     </nav>
     </div>
  
