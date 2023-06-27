@@ -1,7 +1,7 @@
 import Header from '../components/Header.js'
 import Feature from '../components/Feature.js'
 import ContentLanding from '../components/ContentLanding.js'
-import Footer from '../components/Footer.Js'
+import MainFooter from '../components/MainFooter.js'
 import lake from '../images/stock-lake.jpeg'
 
 const Landing = () => {
@@ -10,7 +10,7 @@ const Landing = () => {
     <Header />
     <Feature image={lake} alt={'Boat stuff'}  />
     <ContentLanding />
-   <Footer />
+    <MainFooter />
     </div>
   )
 }
