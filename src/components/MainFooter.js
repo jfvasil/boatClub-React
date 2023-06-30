@@ -4,7 +4,7 @@ const MainFooter = () => {
   <div className="container px-5 py-24 mx-auto flex md:items-center  md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
       <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-        <span className="ml-3 text-xl">Lake Wickaboag Boat Club</span>
+        <span className=" text-xl">Lake Wickaboag Boat Club</span>
       </a>
       <p className="mt-2 text-sm text-gray-500">Tagline can go here maybe</p>
     </div>
@@ -16,7 +16,7 @@ const MainFooter = () => {
         <a href='/About'><h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 hover:text-gray-900">About Us</h2></a>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <a href="/Join"><h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 hover:text-gray-900">Join The Club</h2></a>
+        <a href="/Join"><h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 hover:text-gray-900">Get In Touch</h2></a>
     </div>
     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
         <a href="/Shop"><h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 hover:text-gray-900">Shop</h2></a>

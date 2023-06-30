@@ -23,9 +23,9 @@ const location = useLocation()
     <div className='flex justify-center'>
     <nav className="flex  items-center justify-between md:text-xl mt-7">
       <Link to = '/' className={`mr-10 hover:text-gray-900 ${location.pathname === '/' ? 'underline' : ''}`}>Home</Link>
-      <Link to = 'About' className={`mr-10 hover:text-gray-900${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
-      <Link to = '/Form' className={`mr-10 hover:text-gray-900${location.pathname === '/Form' ? 'underline' : ''}`}>Join The Club</Link>
-      <Link to = '/MembersLogin' className={`hover:text-gray-900${location.pathname === '/MembersLogin' ? 'underline' : ''}`}>Members Login</Link>
+      <Link to = '/About' className={`mr-10 hover:text-gray-900 ${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
+      <Link to = '/Form' className={`mr-10 hover:text-gray-900 ${location.pathname === '/Form' ? 'underline' : ''}`}>Get In Touch</Link>
+      <Link to = '/Shop' className={`hover:text-gray-900 ${location.pathname === '/Shop' ? 'underline' : ''}`}>Shop</Link>
     </nav>
     </div>
  
