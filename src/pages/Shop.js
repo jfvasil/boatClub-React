@@ -1,11 +1,11 @@
 import Header from "../components/Header"
-import ProductDisplay from "../components/ProductDisplay"
 import MainFooter from "../components/MainFooter"
+import MultiProductDisplay from "../components/MultiProductDisplay"
 const Shop = () => {
   return (
     <>
     <Header />
-    <ProductDisplay />
+    <MultiProductDisplay />
     <MainFooter />
     </>
   )

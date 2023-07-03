@@ -1,5 +1,5 @@
 import {Link, useLocation} from 'react-router-dom'
-
+import flag from '../images/flag.jpg'
 
 const Header = () => {
 const location = useLocation()
@@ -8,10 +8,8 @@ const location = useLocation()
     <>
     <header className="text-gray-600">
   <div className='container mx-auto flex p-5 flex-row justify-center'>
-  <h1 className="flex  title-font font-medium items-center justify-center text-gray-900  ml-6"> 
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
+  <h1 className="flex  font-serif text-xl items-center justify-center text-gray-900  ml-6"> 
+    <img src={flag} alt = 'boat club logo' className='w-12 h-12'></img>
       <span className="ml-4 text-2xl md:text-4xl">Lake Wickaboag Boat Club</span>
       </h1>
     <a href='#'><svg className='inline-flex items-center w-7 h-5 ml-6' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
@@ -20,15 +18,15 @@ const location = useLocation()
 
     
     </div>
-    <div className='flex justify-center'>
-    <nav className="flex  items-center justify-between md:text-xl mt-7">
-      <Link to = '/' className={`mr-10 hover:text-gray-900 ${location.pathname === '/' ? 'underline' : ''}`}>Home</Link>
-      <Link to = '/About' className={`mr-10 hover:text-gray-900 ${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
-      <Link to = '/Form' className={`mr-10 hover:text-gray-900 ${location.pathname === '/Form' ? 'underline' : ''}`}>Get In Touch</Link>
-      <Link to = '/Shop' className={`hover:text-gray-900 ${location.pathname === '/Shop' ? 'underline' : ''}`}>Shop</Link>
+    <div className='flex justify-center bg-gradient-to-r from-green-400 to-blue-500 text-black'>
+    <nav className="flex  items-center justify-between md:text-xl mt-7 mb-3">
+      <Link to = '/' className={`mr-10 hover:text-red-200 ${location.pathname === '/' ? 'underline' : ''}`}>Home</Link>
+      <Link to = '/About' className={`mr-10 hover:text-red-200 ${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
+      <Link to = '/Form' className={`mr-10 hover:text-red-200 ${location.pathname === '/Form' ? 'underline' : ''}`}>Get In Touch</Link>
+      <Link to = '/Shop' className={`hover:text-red-200 ${location.pathname === '/Shop' ? 'underline' : ''}`}>Shop</Link>
     </nav>
     </div>
- 
+
 </header>
     </>
   )

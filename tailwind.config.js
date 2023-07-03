@@ -5,7 +5,11 @@ module.exports = {
     './public/index.html'
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'striped-bg': 'url(../src/images/BlueWhiteStripesThin.webp)'
+      }
+    },
   },
   plugins: [],
 }
