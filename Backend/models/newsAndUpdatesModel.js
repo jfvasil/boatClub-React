@@ -15,4 +15,4 @@ const newsAndUpdatesSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Boat-Club',newsAndUpdatesSchemachema)
+module.exports = mongoose.model('NewsAndUpdates',newsAndUpdatesSchema)

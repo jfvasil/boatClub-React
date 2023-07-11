@@ -15,4 +15,4 @@ const meetingRecapSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Boat-Club', meetingRecapSchema)
+module.exports = mongoose.model('MeetingRecap', meetingRecapSchema)
