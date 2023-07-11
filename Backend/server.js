@@ -1,6 +1,7 @@
 const express = require('express')
 const connectDB = require('./config/database')
 const app = express()
+const cors = require('cors')
 const bodyParser = require('body-parser')
 
 require('dotenv').config({path: './.env'})
@@ -10,6 +11,7 @@ connectDB()
 const recapRouter = require('./routers/meetingRecapsRouter')
 const newsRouter = require('./routers/newsAndUpdatesRouter')
 
+app.use(cors())
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))

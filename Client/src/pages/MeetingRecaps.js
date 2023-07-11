@@ -1,10 +1,10 @@
-import MeetingRecapItem from "../components/RecapItem"
-import MeetingRecapForm from '../components/MeetingRecapForm'
+import RecapItem from "../components/RecapItem"
+import CreateRecap from '../components/CreateRecap'
 const MeetingRecaps = () => {
   return (
     <>
-    <MeetingRecapItem />
-    <MeetingRecapForm />
+    <RecapItem />
+    <CreateRecap />
     </>
   )
 }

@@ -27,7 +27,7 @@ exports.getRecapByID = async (req, res) => {
 // Create
 exports.createRecap = async (req, res) => {
   try {
-    const { title, content } = req.body;
+    const { title, date, content } = req.body;
     const newRecap = new Recap({
       title,
       date,
@@ -46,7 +46,7 @@ exports.updateRecap = async (req, res) => {
     const { title, date, content } = req.body;
     const updatedRecap = await Recap.findByIdAndUpdate(
       req.params.id,
-      { title, content },
+      { title, date, content },
       { new: true }
     );
     if (!updatedRecap) {
