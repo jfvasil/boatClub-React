@@ -1,5 +1,5 @@
 const express = require('express')
-const Recap = require('../models/meetingRecapsModel');
+const Recap = require('../models/meetingRecapsModel')
 
 // Get all recaps
 exports.getAllRecaps = async (req, res) => {
@@ -9,20 +9,20 @@ exports.getAllRecaps = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch recaps' });
   }
-};
+}
 
 // Get a single Recap
 exports.getRecapByID = async (req, res) => {
   try {
-    const recap = await Recap.findById(req.params.id);
+    const recap = await Recap.findById(req.params.id)
     if (!recap) {
-      return res.status(404).json({ error: 'Recap not found' });
+      return res.status(404).json({ error: 'Recap not found' })
     }
-    res.json(recap);
+    res.json(recap)
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch recap' });
+    res.status(500).json({ error: 'Failed to fetch recap' })
   }
-};
+}
 
 // Create
 exports.createRecap = async (req, res) => {
@@ -38,7 +38,7 @@ exports.createRecap = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to create recap' });
   }
-};
+}
 
 // Update 
 exports.updateRecap = async (req, res) => {
@@ -48,26 +48,26 @@ exports.updateRecap = async (req, res) => {
       req.params.id,
       { title, date, content },
       { new: true }
-    );
+    )
     if (!updatedRecap) {
-      return res.status(404).json({ error: 'Recap not found' });
+      return res.status(404).json({ error: 'Recap not found' })
     }
     res.json(updatedRecap);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to update recap' });
+    res.status(500).json({ error: 'Failed to update recap' })
   }
-};
+}
 //Delete
 exports.deleteRecap = async (req, res) => {
   try {
-    const deletedRecap = await Recap.findByIdAndDelete(req.params.id);
+    const deletedRecap = await Recap.findByIdAndDelete(req.params.id)
     if (!deletedRecap) {
-      return res.status(404).json({ error: 'Recap not found' });
+      return res.status(404).json({ error: 'Recap not found' })
     }
-    res.json({ message: 'Recap deleted successfully' });
+    res.json({ message: 'Recap deleted successfully' })
   } catch (error) {
-    res.status(500).json({ error: 'Failed to delete recap' });
+    res.status(500).json({ error: 'Failed to delete recap' })
   }
-};
+}
 
 
