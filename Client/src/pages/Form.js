@@ -3,10 +3,10 @@ import FormComponent from "../components/FormComponent"
 import ContactList from "../components/ContactList"
 import MainFooter from "../components/MainFooter"
 
-const Form = () => {
+const Form = ({req}) => {
   return (
     <>
-    <Header />
+    <Header req={req} />
     <ContactList />
     <FormComponent />
     <MainFooter />

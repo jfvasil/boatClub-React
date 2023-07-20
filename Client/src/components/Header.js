@@ -1,8 +1,22 @@
 import {Link, useLocation} from 'react-router-dom'
 import flag from '../images/flag.jpg'
 
-const Header = () => {
+const Header = ({req}) => {
+
+
 const location = useLocation()
+
+const renderUserName = () => {
+  if(req.user){
+    return (
+      <span>Hello {req.user.name}</span>
+    )
+  } else{
+    return (
+      <a href='/login'><span>Member Log In</span></a>
+    )
+  }
+}
 
   return (
     <>
