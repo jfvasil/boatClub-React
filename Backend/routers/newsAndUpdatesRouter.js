@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+const verifyJWT = require('../middleware/verifyJWT')
 const {
     getAllNews,
     getNewsByID,
@@ -8,6 +8,9 @@ const {
     updateNews,
     deleteNews
 } = require('../controllers/newsAndUpdatesController')
+
+
+router.use(verifyJWT)
 
 router.get('/', getAllNews)
 router.get('/:id',getNewsByID)

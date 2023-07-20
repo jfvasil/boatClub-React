@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bycrypt')
+const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -20,6 +20,9 @@ const userSchema = new mongoose.Schema({
     enum: ['user', 'admin'],
     default: 'user',
   },
+  refreshToken: {
+    type: String
+  }
 })
 
 userSchema.methods.generateHash = function(password) {

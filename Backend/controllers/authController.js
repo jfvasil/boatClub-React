@@ -1,10 +1,11 @@
 
-const passport = require('passport')
-const {validationResult} = require('express-validator')
+const jwt = require('jsonwebtoken')
+// const {validationResult} = require('express-validator')
 const User = require('../models/userAuthModel')
 const Member = require('../models/memberModel')
 
-exports.signupAuth = async (req, res) => {
+//Register token Validation and form rendering
+const signupAuth = async (req, res) => {
 
   try {
     const { token } = req.params;
@@ -24,64 +25,51 @@ exports.signupAuth = async (req, res) => {
   
 }
 
-exports.signup = async (req, res) => {
-  const {token} = req.params
-  const {name, email, password,} = req.body
 
-  try {
+//Login method
+const login = async (req, res) => {
+const {email,password} = req.body
+if(!email || !password){
+  return res.status(400).json({'message': "Email and password are required"})
+}
+const foundUser = await User.findOne({email})
+if(!foundUser){
+  return res.SendStatus(401)
+} 
+if(foundUser.password === password){
+  const accessToken = jwt.sign(
+    {"email": foundUser.email},
+    process.env.ACCESS_TOKEN_SECRET,
+    {expiresIn: '30s'},
+  )
+  const refreshToken = jwt.sign(
+    {"email": foundUser.email},
+    process.env.REFRESH_TOKEN_SECRET,
+    {expiresIn: '1d'},
+  )
+  //Saving the token
+    foundUser.refreshToken = refreshToken
+    const result = await foundUser.save()
+    console.log(result)
 
-    const errors = validationResult(req)
-    if(!errors.isEmpty()){
-      return res.status(400).json({errors: errors.array()})
-    }
-
-    const member = await Member.findOne({token, used: false})
-    if(!member){
-      return res.status(404).json({errors: 'Invalid token'})
-    }
-    // Check if user already exists
-    const existingUser = await User.findOne({ email })
-    if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' })
-    }
-
-    
-    // Create new user
-    const newUser = new User({ name, email, password})
-    await newUser.save()
-
-    //Mark token as used
-    member.used = true
-    await member.save()
-
-    res.status(201).json({ message: 'Signup successful' })
-  } catch (error) {
-    res.status(500).json({ error: 'Signup failed' })
-  }
+    //create cookie 
+    res.cookie('jwt', refreshToken,{ httpOnly: true, secure: false, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 })
+   
+    //send access token
+  res.json({accessToken})
+}else{
+  res.sendStatus(401)
 }
 
-// Function: Login
-// Description: User login
-exports.login = (req, res, next) => {
-  passport.authenticate('local', (error, user) => {
-    if (error || !user) {
-      return res.status(401).json({ message: 'Invalid credentials' })
-    }
 
-    req.logIn(user, (error) => {
-      if (error) {
-        return res.status(500).json({ error: 'Login failed' })
-      }
+}
 
-      res.status(200).json({ message: 'Login successful' })
-    })
-  })(req, res, next)
-};
 
-// Function: Logout
-// Description: User logout
-exports.logout = (req, res) => {
+
+//Logout Method
+const logout = (req, res) => {
   req.logout()
   res.status(200).json({ message: 'Logout successful' })
 }
 
+module.exports = {signupAuth, login, logout}

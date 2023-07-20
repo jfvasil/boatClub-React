@@ -3,10 +3,11 @@ const connectDB = require('./config/database')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const passport = require('passport')
-const session = require('express-session')
+const cookieParser = require('cookie-parser')
+const path = require('path')
+const verifyJWT = require('./middleware/verifyJWT')
 
-require('./config/passport')(passport)
+
 require('dotenv').config({path: './.env'})
 
 connectDB()
@@ -14,23 +15,25 @@ connectDB()
 const recapRouter = require('./routers/meetingRecapsRouter')
 const newsRouter = require('./routers/newsAndUpdatesRouter')
 const authRouter = require('./routers/authRouter')
+const signUpRouter = require('./routers/signUpRouter')
 
 app.use(cors())
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(cookieParser())
 
+app.use('/signup', signUpRouter)
+
+app.use(verifyJWT)
+app.use('/api/auth', authRouter)
 app.use('/api/recaps', recapRouter)
 app.use('/api/news', newsRouter)
-app.use('/api/auth', authRouter)
 
-app.use(session({
-    secret: process.env.session_secret, 
-    resave: false,
-    saveUninitialized: false
-}))
-app.use(passport.initialize())
-app.use(passport.session())
+
+
+
+
 
 
 app.listen(3000, () => {
