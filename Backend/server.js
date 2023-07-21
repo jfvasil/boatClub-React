@@ -24,9 +24,11 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser())
 
 app.use('/signup', signUpRouter)
+app.use('/auth', authRouter)
+
 
 app.use(verifyJWT)
-app.use('/api/auth', authRouter)
+
 app.use('/api/recaps', recapRouter)
 app.use('/api/news', newsRouter)
 

@@ -38,7 +38,11 @@ if(!foundUser){
 } 
 if(foundUser.password === password){
   const accessToken = jwt.sign(
-    {"email": foundUser.email},
+    {"UserInfo": {
+      "email": foundUser.email,
+      "role": role
+    }
+  },
     process.env.ACCESS_TOKEN_SECRET,
     {expiresIn: '30s'},
   )
@@ -67,9 +71,25 @@ if(foundUser.password === password){
 
 
 //Logout Method
-const logout = (req, res) => {
-  req.logout()
-  res.status(200).json({ message: 'Logout successful' })
+const logout = async (req, res) => {
+  const cookies = req.cookies
+  if(!cookies?.jwt){
+    return res.sendStatus(204)
+  } 
+  const refreshToken = cookies.jwt
+//checking for refresh token
+  const foundUser = await User.findOne({refreshToken}).exec()
+  if(!foundUser){
+    res.clearCookie('jwt', {httpOnly: true, sameSite: 'None', secure: true})
+    return res.sendStatus(204)
+  }
+  //delete the refresh token
+  foundUser.refreshToken = ''
+  const result = await foundUser.save()
+  console.log(result)
+
+  res.clearCookie('jwt', {httpOnly: true, sameSite: 'None', secure: true})
+  res.sendStatus(204)
 }
 
 module.exports = {signupAuth, login, logout}
