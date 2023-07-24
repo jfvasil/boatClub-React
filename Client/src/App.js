@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
+import Login from './pages/Login';
+import Layout from './components/Layout'
+import Unauthorized from './components/Unauthorized'
+import RequireAuth from './components/RequireAuth';
+import SignupForm from './components/SignUpForm'
 import Landing from './pages/Landing';
 import About from './pages/About'
 import Form from './pages/Form';
@@ -8,21 +13,29 @@ import Events from './pages/Events';
 import NewsAndUpdates from './pages/NewsAndUpdates';
 import Login from './pages/Login';
 
-function App({req}) {
+function App() {
   return (
-   <Router>
+  
       <Routes>
-      <Route exact path = '/' element = {<Landing req={req} />} />
-      <Route exact path = '/About' element = {<About req={req} />} />
-       <Route exact path = '/Form' element = {<Form req={req} />} />
-      <Route exact path = '/Shop' element = {<Shop req={req} />} />
-      <Route exact path = '/MeetingRecaps' element = {<MeetingRecaps req={req} />} />
-      <Route exact path = '/NewsAndUpdates' element = {<NewsAndUpdates req={req} />} />
-      <Route exact path = '/Events' element = {<Events req={req} />} />
-       <Route exact path = '/Login' element = {<Login />} />
+        <Route path='/' element={<Layout />}>
+          {/* public routes */}
+      <Route exact path = '/home' element = {<Landing  />} />
+      <Route exact path = '/About' element = {<About  />} />
+       <Route exact path = '/Form' element = {<Form  />} />
+      <Route exact path = '/Shop' element = {<Shop />} />
+      <Route exact path = '/Login' element = {<Login />} />
+      <Route exact path='/signup' element = {<SignupForm />} />
+      <Route exact path = '/unauthorized' element = {<Unauthorized />} />
 
+      {/* protected routes */}
+      <Route element={<RequireAuth allowedRoles={['user', 'admin']} />}>
+      <Route exact path = '/MeetingRecaps' element = {<MeetingRecaps  />} />
+      <Route exact path = '/NewsAndUpdates' element = {<NewsAndUpdates  />} />
+       <Route exact path = '/Events' element = {<Events  />} />
+        </Route>
+        </Route>
       </Routes>
-    </Router>
+    
 
 
   );
