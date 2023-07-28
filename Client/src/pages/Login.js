@@ -10,7 +10,7 @@ const Login = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || "/"
+    const from = location.state?.from?.pathname || "/home"
 
     const userRef = useRef()
     const errRef = useRef()
@@ -41,9 +41,9 @@ const Login = () => {
             console.log(JSON.stringify(response?.data))
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.role;
+            const role = response?.data?.role;
             setAuth({ email, password, role, accessToken })
-            setUser('')
+            setEmail('')
             setPwd('')
             navigate(from, { replace: true })
         } catch (err) {

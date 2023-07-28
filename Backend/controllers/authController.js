@@ -33,14 +33,14 @@ if(!email || !password){
   return res.status(400).json({'message': "Email and password are required"})
 }
 const foundUser = await User.findOne({email})
-if(!foundUser){
+if(!foundUser || !foundUser.validPassword(password)){
   return res.SendStatus(401)
 } 
-if(foundUser.password === password){
+// if(foundUser.validPassword(password) === password){
   const accessToken = jwt.sign(
     {"UserInfo": {
       "email": foundUser.email,
-      "role": role
+      "role": foundUser.role
     }
   },
     process.env.ACCESS_TOKEN_SECRET,
@@ -61,12 +61,13 @@ if(foundUser.password === password){
    
     //send access token
   res.json({accessToken})
-}else{
-  res.sendStatus(401)
 }
+// }else{
+//   res.sendStatus(401)
+// }
 
 
-}
+//}
 
 
 

@@ -1,4 +1,11 @@
+import {Link} from 'react-router-dom'
+import useAuth from '../hooks/useAuth'
+
+
 const MainFooter = () => {
+
+  const auth = useAuth()
+
   return (
     <footer className="text-gray-600 body-font bg-red-600">
   <div className="container px-5 py-24 mx-auto flex md:items-center  md:flex-row md:flex-nowrap flex-wrap flex-col">
@@ -28,6 +35,9 @@ const MainFooter = () => {
       <p className="text-gray-500 text-sm text-center sm:text-left">© 2023 Lake Wickaboag Boat Club —
         <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@JohnnyFVasil</a>
       </p>
+      {auth?.email && (
+        <Link className="hover: text-red-200" to='/logout'>Logout</Link>
+      )}
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
         <a className="text-gray-500">
           <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">

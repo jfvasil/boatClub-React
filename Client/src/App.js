@@ -1,5 +1,6 @@
 import { Routes, Route} from 'react-router-dom'
 import Login from './pages/Login';
+import Logout from './components/Logout';
 import Layout from './components/Layout'
 import Unauthorized from './components/Unauthorized'
 import RequireAuth from './components/RequireAuth';
@@ -11,7 +12,7 @@ import Shop from './pages/Shop';
 import MeetingRecaps from './pages/MeetingRecaps';
 import Events from './pages/Events';
 import NewsAndUpdates from './pages/NewsAndUpdates';
-import Login from './pages/Login';
+
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route exact path = '/Shop' element = {<Shop />} />
       <Route exact path = '/Login' element = {<Login />} />
       <Route exact path='/signup' element = {<SignupForm />} />
+      <Route exact path='logout' element= {<Logout />} />
       <Route exact path = '/unauthorized' element = {<Unauthorized />} />
 
       {/* protected routes */}

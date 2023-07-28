@@ -2,10 +2,12 @@ const express = require('express')
 const connectDB = require('./config/database')
 const app = express()
 const cors = require('cors')
+const corsOptions = require('./config/corsOptions')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const path = require('path')
 const verifyJWT = require('./middleware/verifyJWT')
+
 
 
 require('dotenv').config({path: './.env'})
@@ -17,7 +19,7 @@ const newsRouter = require('./routers/newsAndUpdatesRouter')
 const authRouter = require('./routers/authRouter')
 const signUpRouter = require('./routers/signUpRouter')
 
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))

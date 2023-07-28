@@ -4,7 +4,7 @@ import axios from '../api/axios'
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const EMAIL_REGEX = /^[A-z][A-z0-9-_]{3,23}$/
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
 const SIGNUP_URL = '/signup'
 
@@ -37,7 +37,7 @@ userRef.current.focus()
 }, [])
 
 useEffect(() => {
-    setValidName(EMAIL_REGEX.test(email))
+    setValidEmail(EMAIL_REGEX.test(email))
 }, [email])
 
 useEffect(() => {
@@ -56,7 +56,7 @@ const handleSubmit = async (e) => {
     const v2 = PWD_REGEX.test(password)
 
     if(!v1 || !v2){
-        setErrMSg('Invalid Entry')
+        setErrMsg('Invalid Entry')
         return
     }
     try{
@@ -97,10 +97,10 @@ const handleSubmit = async (e) => {
                 </p>
             </section>
         ) : (
-            <section>
-            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+            <section className='container mx-center bg-gray-100 font-serif '>
+            <p ref={errRef} className={errMsg ? "bg-red-100 text-red-400 p-1 mb-1" : "absolute top-[-9999px] left-[-9999px]"} aria-live="assertive">{errMsg}</p>
             <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
+            <form className='flex flex-col justify-evenly flex-grow pb-1 ' onSubmit={handleSubmit}>
                 <label htmlFor="name">
                     Name:
                 </label>
@@ -109,34 +109,34 @@ const handleSubmit = async (e) => {
                     id="name"
                     ref={userRef}
                     autoComplete="off"
-                    onChange={(e) => setUser(e.target.value)}
+                    onChange={(e) => setName(e.target.value)}
                     value={name}
                     required
-                    aria-invalid={validName ? "false" : "true"}
+                    aria-invalid={validEmail ? "false" : "true"}
                     aria-describedby="uidnote"
                     onFocus={() => setNameFocus(true)}
                     onBlur={() => setNameFocus(false)}
                 />
 
                 <label htmlFor="email">
-                            Username:
-                            <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"} />
+                            Email:
+                            <FontAwesomeIcon icon={faCheck} className={validEmail ? "text-green-200 ml-1" : "hidden"} />
+                            <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hidden" : "text-red-300 ml-1"} />
                         </label>
                         <input
                             type="text"
                             id="email"
                             ref={userRef}
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                             value={email}
                             required
                             aria-invalid={validEmail ? "false" : "true"}
                             aria-describedby="uidnote"
-                            onFocus={() => setUserFocus(true)}
-                            onBlur={() => setUserFocus(false)}
+                            onFocus={() => setEmailFocus(true)}
+                            onBlur={() => setEmailFocus(false)}
                         />
-                        <p id="uidnote" className={userFocus && email && !validEmail ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={nameFocus && email && !validEmail ? "relative text-sm rounded-lg bg-black text-white p-1 bottom-[-10px]" : "absolute top-[-9999px] left-[-9999px]"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
                             Must begin with a letter.<br />
@@ -147,8 +147,8 @@ const handleSubmit = async (e) => {
 
                 <label htmlFor="password">
                     Password:
-                    <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                    <FontAwesomeIcon icon={faTimes} className={validPwd || !password ? "hide" : "invalid"} />
+                    <FontAwesomeIcon icon={faCheck} className={validPwd ? "text-green-200 ml-1" : "hidden"} />
+                    <FontAwesomeIcon icon={faTimes} className={validPwd || !password ? "hidden" : "text-red-300 ml-1"} />
                 </label>
                 <input
                     type="password"
@@ -161,7 +161,7 @@ const handleSubmit = async (e) => {
                     onFocus={() => setPwdFocus(true)}
                     onBlur={() => setPwdFocus(false)}
                 />
-                <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
+                <p id="pwdnote" className={pwdFocus && !validPwd ? "relative text-sm rounded-lg bg-black text-white p-1 bottom-[-10px]" : "absolute top-[-9999px] left-[-9999px]"}>
                     <FontAwesomeIcon icon={faInfoCircle} />
                     8 to 24 characters.<br />
                     Must include uppercase and lowercase letters, a number and a special character.<br />
@@ -171,8 +171,8 @@ const handleSubmit = async (e) => {
 
                 <label htmlFor="confirm_pwd">
                     Confirm Password:
-                    <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
-                    <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
+                    <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "text-green-200 ml-1" : "hidden"} />
+                    <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hidden" : "text-red-300 ml-1"} />
                 </label>
                 <input
                     type="password"
@@ -185,16 +185,16 @@ const handleSubmit = async (e) => {
                     onFocus={() => setMatchFocus(true)}
                     onBlur={() => setMatchFocus(false)}
                 />
-                <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
+                <p id="confirmnote" className={matchFocus && !validMatch ? "relative text-sm rounded-lg bg-black text-white p-1 bottom-[-10px]" : "absolute top-[-9999px] left-[-9999px]"}>
                     <FontAwesomeIcon icon={faInfoCircle} />
                     Must match the first password input field.
                 </p>
 
-                <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                <button disabled={!validEmail || !validPwd || !validMatch ? true : false}>Sign Up</button>
             </form>
             <p>
                 Already singed up?<br />
-                <span className="line">
+                <span className="inline-block">
                     <Link to="/">Sign In</Link>
                 </span>
             </p>
