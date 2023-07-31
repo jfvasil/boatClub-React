@@ -18,6 +18,7 @@ const recapRouter = require('./routers/meetingRecapsRouter')
 const newsRouter = require('./routers/newsAndUpdatesRouter')
 const authRouter = require('./routers/authRouter')
 const signUpRouter = require('./routers/signUpRouter')
+const refreshRouter = require('./routers/refreshRouter')
 
 app.use(cors(corsOptions))
 
@@ -27,7 +28,7 @@ app.use(cookieParser())
 
 app.use('/signup', signUpRouter)
 app.use('/auth', authRouter)
-
+app.use('/refresh', refreshRouter)
 
 app.use(verifyJWT)
 

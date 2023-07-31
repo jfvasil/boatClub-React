@@ -57,7 +57,7 @@ if(!foundUser || !foundUser.validPassword(password)){
     console.log(result)
 
     //create cookie 
-    res.cookie('jwt', refreshToken,{ httpOnly: true, secure: false, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 })
+    res.cookie('jwt', refreshToken,{ httpOnly: true, secure: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 })
    
     //send access token
   res.json({accessToken})

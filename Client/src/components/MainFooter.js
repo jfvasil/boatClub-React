@@ -1,10 +1,17 @@
-import {Link} from 'react-router-dom'
+import {useNavigate,} from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
+import useLogout from '../hooks/useLogout'
 
 
 const MainFooter = () => {
-
+  const navigate = useNavigate()
   const auth = useAuth()
+  const logout = useLogout()
+
+  const signOut = async () => {
+    await logout()
+    navigate('/home')
+  }
 
   return (
     <footer className="text-gray-600 body-font bg-red-600">
@@ -35,8 +42,8 @@ const MainFooter = () => {
       <p className="text-gray-500 text-sm text-center sm:text-left">© 2023 Lake Wickaboag Boat Club —
         <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@JohnnyFVasil</a>
       </p>
-      {auth?.email && (
-        <Link className="hover: text-red-200" to='/logout'>Logout</Link>
+      {auth?.accessToken && (
+        <button className='bg-red-300 text-lg' onClick={signOut}>Sign Out</button>
       )}
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
         <a className="text-gray-500">

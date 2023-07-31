@@ -6,6 +6,8 @@ const handleRefreshToken = async (req,res) => {
     if(!cookies.jwt){
         return res.sendStatus(403)
     }
+    const refreshToken = cookies.jwt
+
     const foundUser = await User.findOne({refreshToken}).exec()
     if(!foundUser){
         return res.sendStatus(403)
@@ -17,18 +19,18 @@ const handleRefreshToken = async (req,res) => {
             if(err || foundUser.email !== decoded.email){
                 return res.sendStatus(403)
             }
-            const roles = Object.values(foundUser.roles)
+            const role = Object.values(foundUser.role)
             const accessToken = jwt.sign(
                 {
                     "UserInfo": {
                         "email": decoded.email,
-                        "roles": roles
+                        "role": role
                     }
                 },
                 process.env.ACCESS_TOKEN_SECRET,
                 {expiresIn: '30s'}
             )
-            res.json({roles, accessToken})
+            res.json({role, accessToken})
         }
     )
 }

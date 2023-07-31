@@ -12,14 +12,18 @@ import Shop from './pages/Shop';
 import MeetingRecaps from './pages/MeetingRecaps';
 import Events from './pages/Events';
 import NewsAndUpdates from './pages/NewsAndUpdates';
+import PersistLogin from './components/PersistLogin'
 
 
 function App() {
   return (
   
-      <Routes>
+   <Routes>
+     <Route element={<PersistLogin />}>
+
         <Route path='/' element={<Layout />}>
           {/* public routes */}
+
       <Route exact path = '/home' element = {<Landing  />} />
       <Route exact path = '/About' element = {<About  />} />
        <Route exact path = '/Form' element = {<Form  />} />
@@ -36,8 +40,9 @@ function App() {
        <Route exact path = '/Events' element = {<Events  />} />
         </Route>
         </Route>
+        </Route>
       </Routes>
-    
+      
 
 
   );

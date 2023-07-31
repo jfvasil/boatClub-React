@@ -7,7 +7,7 @@ const Header = () => {
 
 
 const location = useLocation()
-const auth = useAuth()
+const {auth} = useAuth()
 const [showDropDown, setShowDropDown] = useState(false)
 
 const DropDownToggle = () => {
@@ -33,7 +33,7 @@ const DropDownToggle = () => {
       <Link to = '/About' className={`mr-10 hover:text-red-200 ${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
       <Link to = '/Form' className={`mr-10 hover:text-red-200 ${location.pathname === '/Form' ? 'underline' : ''}`}>Get In Touch</Link>
       <Link to = '/Shop' className={`mr-10 hover:text-red-200 ${location.pathname === '/Shop' ? 'underline' : ''}`}>Shop</Link>
-      {auth?.email ? 
+      {auth.accessToken ? 
         (
           <div className="relative inline-block">
             <button className="hover:text-red-200 font-semibold focus:outline-none" onClick={DropDownToggle}>
