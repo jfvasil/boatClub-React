@@ -1,6 +1,5 @@
 
 const jwt = require('jsonwebtoken')
-// const {validationResult} = require('express-validator')
 const User = require('../models/userAuthModel')
 const Member = require('../models/memberModel')
 
@@ -85,7 +84,7 @@ const logout = async (req, res) => {
     return res.sendStatus(204)
   }
   //delete the refresh token
-  foundUser.refreshToken = ''
+  foundUser.refreshToken = foundUser.refreshToken.filter(rt => rt !== refreshToken)
   const result = await foundUser.save()
   console.log(result)
 

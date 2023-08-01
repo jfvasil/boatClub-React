@@ -19,10 +19,11 @@ function App() {
   return (
   
    <Routes>
-     <Route element={<PersistLogin />}>
+     
 
         <Route path='/' element={<Layout />}>
           {/* public routes */}
+          <Route element={<PersistLogin />}>
 
       <Route exact path = '/home' element = {<Landing  />} />
       <Route exact path = '/About' element = {<About  />} />
