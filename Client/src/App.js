@@ -35,7 +35,7 @@ function App() {
       <Route exact path = '/unauthorized' element = {<Unauthorized />} />
 
       {/* protected routes */}
-      <Route element={<RequireAuth allowedRoles={['user', 'admin']} />}>
+      <Route element={<RequireAuth allowedRoles={['admin', 'user']} />}>
       <Route exact path = '/MeetingRecaps' element = {<MeetingRecaps  />} />
       <Route exact path = '/NewsAndUpdates' element = {<NewsAndUpdates  />} />
        <Route exact path = '/Events' element = {<Events  />} />

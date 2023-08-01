@@ -42,7 +42,7 @@ const DropDownToggle = () => {
             {showDropDown && (
             <div className="absolute z-10 bg-white rounded-md shadow-md py-2 right-0 mt-1">
               <Link
-                to="/meeting-recaps"
+                to="/MeetingRecaps"
                 className={`block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 ${
                   location.pathname === '/meeting-recaps' ? 'underline' : ''
                 }`}
@@ -50,7 +50,7 @@ const DropDownToggle = () => {
                 Meeting Recaps
               </Link>
               <Link
-                to="/news-and-updates"
+                to="/NewsAndUpdates"
                 className={`block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 ${
                   location.pathname === '/news-and-updates' ? 'underline' : ''
                 }`}
@@ -58,7 +58,7 @@ const DropDownToggle = () => {
                 News and Updates
               </Link>
               <Link
-                to="/events"
+                to="/Events"
                 className={`block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 ${
                   location.pathname === '/events' ? 'underline' : ''
                 }`}

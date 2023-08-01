@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from '../api/axios';
 
 const CreateRecap = () => {
   const [title, setTitle] = useState('');
@@ -11,13 +12,7 @@ const CreateRecap = () => {
     const recapData = { title, date, content };
 
     try {
-      const response = await fetch('http://localhost:3000/api/recaps', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(recapData),
-      });
+      const response = await axios.post('/api/recaps');
 
       if (response.ok) {
         // Recap created successfully

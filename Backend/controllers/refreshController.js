@@ -19,7 +19,7 @@ const handleRefreshToken = async (req,res) => {
             if(err || foundUser.email !== decoded.email){
                 return res.sendStatus(403)
             }
-            const role = Object.values(foundUser.role)
+            const role = foundUser.role
             const accessToken = jwt.sign(
                 {
                     "UserInfo": {

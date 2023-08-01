@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import axios from '../api/axios';
 
 const MeetingRecapItem = ({ recapId }) => {
-  const [recap, setRecap] = useState(null);
+  const [recap, setRecap] = useState(null)
 
   useEffect(() => {
     const fetchRecap = async () => {
       try {
-        const response = await fetch(`http://localhost:3000//api/recaps/${recapId}`);
+        const response = await axios.get(`/api/recaps/${recapId}`)
         if (response.ok) {
           const data = await response.json();
           setRecap(data);
         } else {
-          console.error('Failed to fetch meeting recap');
+          console.error('Failed to fetch meeting recap')
         }
       } catch (error) {
-        console.error('Failed to fetch meeting recap:', error);
+        console.error('Failed to fetch meeting recap:', error)
       }
     };
 
-    fetchRecap();
-  }, [recapId]);
+    fetchRecap()
+  }, [recapId])
 
   if (!recap) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   return (
@@ -34,4 +35,4 @@ const MeetingRecapItem = ({ recapId }) => {
   );
 };
 
-export default MeetingRecapItem;
+export default MeetingRecapItem
