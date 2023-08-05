@@ -1,36 +1,47 @@
 import { useState, useEffect } from 'react'
-import axios from '../api/axios';
+import useAxiosPrivate from '../hooks/useAxiosPrivate'
+import newsAndRecapEmitter from '../eventEmitters/newsAndRecapEmitter'
 
 const MeetingRecapItem = ({ recapId }) => {
-  const [recap, setRecap] = useState(null)
+  const [recaps, setRecaps] = useState([])
+  const axiosPrivate = useAxiosPrivate()
+  
 
-  useEffect(() => {
-    const fetchRecap = async () => {
+    const fetchRecaps = async () => {
       try {
-        const response = await axios.get(`/api/recaps/${recapId}`)
-        if (response.ok) {
-          const data = await response.json();
-          setRecap(data);
-        } else {
-          console.error('Failed to fetch meeting recap')
+        const response = await axiosPrivate.get('/api/recaps')
+      
+          setRecaps(response.data);
         }
-      } catch (error) {
+       catch (error) {
         console.error('Failed to fetch meeting recap:', error)
       }
     };
 
-    fetchRecap()
-  }, [recapId])
+  useEffect(() => {
+    fetchRecaps()
 
-  if (!recap) {
+    const unsubscribe = newsAndRecapEmitter.subscribe(() => {
+      fetchRecaps()
+    })
+    return () => {
+      unsubscribe()
+    }
+  }, [])
+
+  if (recaps.length === 0) {
     return <div>Loading...</div>
   }
 
   return (
     <div>
-      <h2>{recap.title}</h2>
-      <p>Date: {recap.date}</p>
-      <p>Content: {recap.content}</p>
+    {recaps.map((recap) => (
+      <div key={recap._id}>
+        <h2>{recap.title}</h2>
+        <p>{recap.date}</p>
+        <p>{recap.content}</p>
+      </div>
+    ))}
     </div>
   );
 };

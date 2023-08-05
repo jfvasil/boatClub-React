@@ -27,16 +27,16 @@ exports.getRecapByID = async (req, res) => {
 // Create
 exports.createRecap = async (req, res) => {
   try {
-    const { title, date, content } = req.body;
+    const { title, date, content } = req.body
     const newRecap = new Recap({
       title,
       date,
       content,
-    });
-    const savedRecap = await newRecap.save();
-    res.status(201).json(savedRecap);
+    })
+    const savedRecap = await newRecap.save()
+    res.status(201).json(savedRecap)
   } catch (error) {
-    res.status(500).json({ error: 'Failed to create recap' });
+    res.status(500).json({ error: 'Failed to create recap' })
   }
 }
 
