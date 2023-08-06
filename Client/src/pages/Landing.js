@@ -1,7 +1,7 @@
-import Header from '../components/Header.js'
-import Feature from '../components/Feature.js'
-import ContentLanding from '../components/ContentLanding.js'
-import MainFooter from '../components/MainFooter.js'
+import Header from '../components/mainComponents/Header'
+import Feature from '../components/subComponents/Feature'
+import ContentLanding from '../components/mainComponents/ContentLanding'
+import MainFooter from '../components/mainComponents/MainFooter'
 import lake from '../images/BoatClubPavillion.jpg'
 
 const Landing = ({req}) => {

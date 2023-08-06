@@ -1,7 +1,7 @@
-import RecapItem from "../components/RecapItem"
-import CreateRecap from '../components/CreateRecap'
-import Header from '../components/Header'
-
+import RecapItems from "../components/subComponents/RecapItems"
+import CreatePost from '../components/utilityComponents/CreatePost'
+import Header from '../components/mainComponents/Header'
+import MainFooter from '../components/mainComponents/MainFooter'
 
 
 
@@ -12,8 +12,9 @@ import Header from '../components/Header'
   return (
     <>
     <Header />
-    <RecapItem  />
-    <CreateRecap endpoint='recaps'  />
+    <RecapItems />
+    <CreatePost endpoint='recaps'  />
+    <MainFooter />
     </>
   )
 }

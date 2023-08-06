@@ -1,18 +1,18 @@
 import { Routes, Route} from 'react-router-dom'
-import Login from './pages/Login';
-import Logout from './components/Logout';
+import Login from './pages/Login'
+import Logout from './components/utilityComponents/Logout'
 import Layout from './components/Layout'
-import Unauthorized from './components/Unauthorized'
-import RequireAuth from './components/RequireAuth';
-import SignupForm from './components/SignUpForm'
-import Landing from './pages/Landing';
+import Unauthorized from './components/utilityComponents/Unauthorized'
+import RequireAuth from './components/utilityComponents/RequireAuth'
+import SignupForm from './components/mainComponents/SignUpForm'
+import Landing from './pages/Landing'
 import About from './pages/About'
-import Form from './pages/Form';
-import Shop from './pages/Shop';
-import MeetingRecaps from './pages/MeetingRecaps';
-import Events from './pages/Events';
-import NewsAndUpdates from './pages/NewsAndUpdates';
-import PersistLogin from './components/PersistLogin'
+import Form from './pages/Form'
+import Shop from './pages/Shop'
+import MeetingRecaps from './pages/MeetingRecaps'
+import Events from './pages/Events'
+import NewsAndUpdates from './pages/NewsAndUpdates'
+import PersistLogin from './components/utilityComponents/PersistLogin'
 
 
 function App() {

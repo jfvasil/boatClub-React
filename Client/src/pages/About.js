@@ -1,8 +1,8 @@
-import Header from "../components/Header"
-import MainFooter from "../components/MainFooter"
-import HeroWithMap from "../components/HeroWithMap"
-import HeroWithPic from "../components/HeroWithPic"
-import Gallery from "../components/Gallery"
+import Header from '../components/mainComponents/Header'
+import MainFooter from "../components/mainComponents/MainFooter"
+import HeroWithMap from "../components/subComponents/HeroWithMap"
+import HeroWithPic from "../components/subComponents/HeroWithPic"
+import Gallery from "../components/subComponents/Gallery"
 import oldLakePic from "../images/oldLakePic.jpeg"
 const About = ({req}) => {
     let titleText = 'A little about the history of the club'

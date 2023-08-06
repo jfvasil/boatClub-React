@@ -1,6 +1,6 @@
-import Header from "../components/Header"
-import MainFooter from "../components/MainFooter"
-import MultiProductDisplay from "../components/MultiProductDisplay"
+import Header from "../components/mainComponents/Header"
+import MainFooter from "../components/mainComponents/MainFooter"
+import MultiProductDisplay from "../components/subComponents/MultiProductDisplay"
 const Shop = ({req}) => {
   return (
     <>

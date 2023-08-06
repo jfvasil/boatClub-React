@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Westbrookfield Lake Wickaboag Boat Club Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Westbrookfield Lake Wickaboag Boat Club Website repository! This project is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that showcases the power of modern web development technologies. The website serves as an essential platform for the Lake Wickaboag Boat Club community, offering various features including user authentication, protected routes, user roles, and a user-friendly interface. It's a testament to the potential of combining cutting-edge tools to create a seamless and engaging user experience.
 
-## Available Scripts
+## About the Boat Club
 
-In the project directory, you can run:
+The Westbrookfield Lake Wickaboag Boat Club holds special significance to me as my family's boat docks there every summer. My connection to the club, along with my desire to build a practical project, inspired me to create this website. Not only does it enhance the club's online presence, but it also reflects the spirit of the community and the beauty of Lake Wickaboag.
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Full-Stack MERN**: This project showcases a complete MERN stack application, integrating MongoDB, Express.js, React.js, and Node.js. The combination of these technologies enables robust data management and dynamic front-end interactions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Tailwind CSS**: The website's design is powered by Tailwind CSS, ensuring a responsive and visually appealing user interface.
 
-### `npm test`
+- **JWT Authentication**: JSON Web Tokens (JWT) are used for user authentication, enhancing security and allowing users to securely access personalized content.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Protected Routes**: Utilizing the React Router, the website features protected routes that only authorized users can access, contributing to a controlled and secure environment.
 
-### `npm run build`
+- **User Roles**: The implementation of user roles distinguishes between regular users and administrative users, enabling specific privileges and actions based on the user's role.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React Context**: Leveraging newer React features, such as Context, enhances the website's scalability and maintainability by efficiently managing shared state across components.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

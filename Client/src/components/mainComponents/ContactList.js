@@ -1,4 +1,4 @@
-import boatIcon from "../images/9035720_boat_sharp_icon.png"
+import boatIcon from "../../images/9035720_boat_sharp_icon.png"
 
 const ContactList = () => {
   return (

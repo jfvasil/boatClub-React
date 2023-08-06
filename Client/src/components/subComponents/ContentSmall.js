@@ -1,3 +1,5 @@
+
+
 const ContentSmall = ({textH21,textP1,textH22,textP2}) => {
     let linkText = 'Click for more info'
   return (

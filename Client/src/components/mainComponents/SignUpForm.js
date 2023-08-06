@@ -1,6 +1,6 @@
 import {useRef, useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import axios from '../api/axios'
+import axios from '../../api/axios'
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 

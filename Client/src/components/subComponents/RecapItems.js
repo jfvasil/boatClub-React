@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import useAxiosPrivate from '../hooks/useAxiosPrivate'
-import newsAndRecapEmitter from '../eventEmitters/newsAndRecapEmitter'
+import useAxiosPrivate from '../../hooks/useAxiosPrivate'
+import newsAndRecapEmitter from '../../eventEmitters/newsAndRecapEmitter'
 
-const MeetingRecapItem = ({ recapId }) => {
+const RecapItems = ({ recapId }) => {
   const [recaps, setRecaps] = useState([])
   const axiosPrivate = useAxiosPrivate()
   
@@ -46,4 +46,4 @@ const MeetingRecapItem = ({ recapId }) => {
   );
 };
 
-export default MeetingRecapItem
+export default RecapItems

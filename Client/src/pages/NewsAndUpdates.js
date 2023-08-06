@@ -1,7 +1,17 @@
+import Header from "../components/mainComponents/Header"
+import MainFooter from "../components/mainComponents/MainFooter"
+import CreatePost from "../components/utilityComponents/CreatePost"
+import NewsItems from "../components/subComponents/NewsItems"
+
 
 const NewsAndUpdates = () => {
   return (
-    <div>NewsAndUpdates</div>
+    <>
+    <Header />
+    <NewsItems />
+    <CreatePost endpoint='news' />
+    <MainFooter />
+    </>
   )
 }
 

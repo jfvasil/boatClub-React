@@ -1,8 +1,8 @@
 import { useState} from 'react'
-import useAxiosPrivate from '../hooks/useAxiosPrivate'
-import newsAndRecapEmitter from '../eventEmitters/newsAndRecapEmitter'
+import useAxiosPrivate from '../../hooks/useAxiosPrivate'
+import newsAndRecapEmitter from '../../eventEmitters/newsAndRecapEmitter'
 
-const CreateRecap = ({endpoint, onRecapCreated}) => {
+const CreatePost = ({endpoint, onRecapCreated}) => {
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [content, setContent] = useState('')
@@ -82,7 +82,7 @@ const CreateRecap = ({endpoint, onRecapCreated}) => {
   );
 };
 
-export default CreateRecap
+export default CreatePost
 
 
 

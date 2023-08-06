@@ -1,7 +1,7 @@
 import {Link, useLocation} from 'react-router-dom'
 import { useState } from 'react'
-import useAuth from '../hooks/useAuth'
-import flag from '../images/flag.jpg'
+import useAuth from '../../hooks/useAuth'
+import flag from '../../images/flag.jpg'
 
 const Header = () => {
 

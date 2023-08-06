@@ -1,5 +1,5 @@
-import ContentSmall from "./ContentSmall"
-import ContentTitle from "./ContentTitle"
+import ContentSmall from "../subComponents/ContentSmall"
+import ContentTitle from "../subComponents/ContentTitle"
 
 const ContentLanding = () => {
   

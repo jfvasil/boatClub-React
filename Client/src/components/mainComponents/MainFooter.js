@@ -1,6 +1,6 @@
 import {useNavigate,} from 'react-router-dom'
-import useAuth from '../hooks/useAuth'
-import useLogout from '../hooks/useLogout'
+import useAuth from '../../hooks/useAuth'
+import useLogout from '../../hooks/useLogout'
 
 
 const MainFooter = () => {
