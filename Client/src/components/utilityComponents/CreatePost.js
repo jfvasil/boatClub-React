@@ -2,10 +2,11 @@ import { useState} from 'react'
 import useAxiosPrivate from '../../hooks/useAxiosPrivate'
 import newsAndRecapEmitter from '../../eventEmitters/newsAndRecapEmitter'
 
-const CreatePost = ({endpoint, onRecapCreated}) => {
+const CreatePost = ({endpoint, showForm, toggleForm}) => {
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [content, setContent] = useState('')
+  
 
   const axiosPrivate = useAxiosPrivate()
 
@@ -32,10 +33,16 @@ const CreatePost = ({endpoint, onRecapCreated}) => {
       console.error(error)
     }
   }
+
+  
  
 
 
   return (
+    
+    <div>
+      {showForm && (
+  <section>
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md">
       <div className="mb-4">
         <label htmlFor="title" className="block text-gray-700 font-bold mb-2">
@@ -78,7 +85,11 @@ const CreatePost = ({endpoint, onRecapCreated}) => {
       >
         Submit
       </button>
-    </form>
+    </form> 
+    <button onClick={toggleForm}>Toggle Admin View</button>
+  </section>
+      )}
+  </div>
   );
 };
 

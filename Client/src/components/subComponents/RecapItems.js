@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import useAxiosPrivate from '../../hooks/useAxiosPrivate'
 import newsAndRecapEmitter from '../../eventEmitters/newsAndRecapEmitter'
 
-const RecapItems = ({ recapId }) => {
+const RecapItems = () => {
   const [recaps, setRecaps] = useState([])
   const axiosPrivate = useAxiosPrivate()
   
@@ -34,16 +34,17 @@ const RecapItems = ({ recapId }) => {
   }
 
   return (
-    <div>
+    <div className='space y-6'>
     {recaps.map((recap) => (
-      <div key={recap._id}>
-        <h2>{recap.title}</h2>
-        <p>{recap.date}</p>
+      <div key={recap._id} className='p-4 bg-white rounded-lg shadow-md'>
+        <h2 className='text-xl font-bold mb-2"'>{recap.title}</h2>
+        <p className='italic text-gray-500 mb-2'>{recap.date}</p>
         <p>{recap.content}</p>
+        <hr className='my-4 border-gray-300' />
       </div>
     ))}
     </div>
-  );
-};
+  )
+}
 
 export default RecapItems

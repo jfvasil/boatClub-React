@@ -1,6 +1,8 @@
 import { useRef, useState, useEffect } from 'react'
 import useAuth from '../hooks/useAuth'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
+import Header from '../components/mainComponents/Header'
+import MainFooter from '../components/mainComponents/MainFooter'
 
 import axios from '../api/axios'
 const LOGIN_URL = '/auth/login'
@@ -69,12 +71,13 @@ const Login = () => {
         }, [persist])
 
     return (
-
-        <section>
+        <>
+        <Header />
+        <section className='flex flex-col items-center justify-center h-screen'>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email:</label>
+            <h1 className='text-2xl font-medium mb-4'>Sign In</h1>
+            <form onSubmit={handleSubmit} className='text-center'>
+                <label htmlFor="email" className='block mb-2'>Email:</label>
                 <input
                     type="text"
                     id="email"
@@ -83,20 +86,22 @@ const Login = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                     required
+                    className ='w-full py-2 px-3 mb-2 border rounded focus:outline-none focus:border-indigo-500'
                 />
 
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password" className='block mb-2'>Password:</label>
                 <input
                     type="password"
                     id="password"
                     onChange={(e) => setPwd(e.target.value)}
                     value={password}
                     required
+                    className='w-full py-2 px-3 mb-2 border rounded focus:outline-none focus:border-indigo-500'
                 />
-                <button>Sign In</button>
-                <div className='text-md mt-2 flex justify-start align-end'>
+                <button type='submit' className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300'>Sign In</button>
+                <div className='text-md mt-2'>
                     <input
-                    className='mt-0 mr-2 ml-2 mb-2 '
+                    className='mt-0 mr-2 ml-2 mb-2 align-middle'
                     type='checkbox'
                     id='persist'
                     onChange={togglePersist}
@@ -104,14 +109,15 @@ const Login = () => {
                     <label htmlFor="persist">Trust This Device</label>
                 </div>
             </form>
-            <p>
+            <p className='mt-4'>
                 Need an Account?<br />
-                <span className="line">
-                    <Link to="/signup">Sign Up</Link>
+                <span>
+                    <Link to="/signup" className='text-blue-500 hover:underline'>Sign Up</Link>
                 </span>
             </p>
         </section>
-
+        <MainFooter />
+</>
     )
 }
 
