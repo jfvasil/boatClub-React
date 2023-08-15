@@ -27,10 +27,11 @@ exports.getNewsByID = async (req, res) => {
 // Create
 exports.createNews = async (req, res) => {
   try {
-    const { title, content } = req.body
+    const { title,date, content } = req.body
     const newNews = new News({
       title,
-      content,
+      date,
+      content
     })
     const savedNews = await newNews.save()
     res.status(201).json(savedNews)
@@ -42,7 +43,7 @@ exports.createNews = async (req, res) => {
 // Update 
 exports.updateNews = async (req, res) => {
   try {
-    const { title, content } = req.body;
+    const { title,content } = req.body;
     const updatedNews = await News.findByIdAndUpdate(
       req.params.id,
       { title, content },
@@ -59,7 +60,7 @@ exports.updateNews = async (req, res) => {
 //Delete
 exports.deleteNews = async (req, res) => {
   try {
-    const deletedNews = await Recap.findByIdAndDelete(req.params.id)
+    const deletedNews = await News.findByIdAndDelete(req.params.id)
     if (!deletedNews) {
       return res.status(404).json({ error: 'Post not found' })
     }
