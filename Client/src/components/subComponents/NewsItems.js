@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
-const NewsItems = (role) => {
+const NewsItems = ({role}) => {
   const [newsItems, setNewsItems] = useState([])
   const axiosPrivate = useAxiosPrivate()
   
@@ -24,13 +24,11 @@ const NewsItems = (role) => {
     const handleDelete = async (newsId) => {
       try{
         const response = await axiosPrivate.delete(`/api/news/${newsId}`)
-        if(response.status === 204){
+       
+          fetchNewsItems()
         
-
-          newsAndRecapEmitter.emit('newsDeleted')
-        }
       }catch (error) {
-        console.error('Faliked to delete', error)
+        console.error('Failed to delete', error)
       }
    }
 
@@ -42,14 +40,12 @@ const NewsItems = (role) => {
       
     })
 
-    const unsubscribeDeleted = newsAndRecapEmitter.subscribe('newsDeleted', () => {
-      fetchNewsItems()
-    })
+   
 
     
     return () => {
       unsubscribe()
-      unsubscribeDeleted()
+     
     }
   }, [])
 

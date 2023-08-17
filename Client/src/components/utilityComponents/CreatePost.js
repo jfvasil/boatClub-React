@@ -9,7 +9,7 @@ const CreatePost = ({endpoint, showForm, toggleForm}) => {
   
 
   const axiosPrivate = useAxiosPrivate()
-
+  
 
 
 
@@ -21,7 +21,7 @@ const CreatePost = ({endpoint, showForm, toggleForm}) => {
     try {
       const response = await axiosPrivate.post(`/api/${endpoint}`,recapData)
 
-      console.log('Recap created!')
+      console.log('Post created!')
         console.log(response.data)
         newsAndRecapEmitter.emit()
         setTitle('')
