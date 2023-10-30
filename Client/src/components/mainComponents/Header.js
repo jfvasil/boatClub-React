@@ -55,7 +55,7 @@ const toggleMobileNav = () => {
         {/*desktp nav */}
   <div className=' hidden md:flex justify-center bg-gradient-to-r from-green-400 to-blue-500 text-black'>
     <nav className='flex  items-center justify-between md:text-xl mt-7 mb-3'>
-      <Link to = '/home' className={`mr-10 hover:text-red-200 ${location.pathname === '/' ? 'underline' : ''}`}>Home</Link>
+      <Link to = '/' className={`mr-10 hover:text-red-200 ${location.pathname === '/' ? 'underline' : ''}`}>Home</Link>
       <Link to = '/About' className={`mr-10 hover:text-red-200 ${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
       <Link to = '/Form' className={`mr-10 hover:text-red-200 ${location.pathname === '/Form' ? 'underline' : ''}`}>Get In Touch</Link>
       <Link to = '/Shop' className={`mr-10 hover:text-red-200 ${location.pathname === '/Shop' ? 'underline' : ''}`}>Shop</Link>
