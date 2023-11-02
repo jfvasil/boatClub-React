@@ -28,7 +28,7 @@ const RecapItems = ({role}) => {
        
           // newsAndRecapEmitter.emit('recapDeleted')
           fetchRecaps()
-        
+        console.log(response)
       }catch (error) {
         console.error('Failed to delete', error)
       }
@@ -47,7 +47,7 @@ const RecapItems = ({role}) => {
       unsubscribe()
       
     }
-  }, [])
+  })
 
   if (recaps.length === 0) {
     return <div>Loading...</div>

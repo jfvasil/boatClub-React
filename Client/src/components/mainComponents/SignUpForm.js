@@ -14,7 +14,7 @@ const userRef = useRef()
 const errRef = useRef()
 
 const [name, setName] = useState('')
-const [nameFocus, setNameFocus] = useState(false)
+// const [nameFocus, setNameFocus] = useState(false)
 
 const [email, setEmail] = useState('');
 const [validEmail, setValidEmail] = useState(false);
@@ -93,7 +93,7 @@ const handleSubmit = async (e) => {
             <section>
                 <h1>Success!</h1>
                 <p>
-                    <a href='#'>Sign In</a> 
+                    <Link to='/login'>Sign In</Link> 
                 </p>
             </section>
         ) : (
@@ -114,8 +114,8 @@ const handleSubmit = async (e) => {
                     required
                     aria-invalid={validEmail ? "false" : "true"}
                     aria-describedby="uidnote"
-                    onFocus={() => setNameFocus(true)}
-                    onBlur={() => setNameFocus(false)}
+                    // onFocus={() => setNameFocus(true)}
+                    // onBlur={() => setNameFocus(false)}
                 />
 
                 <label htmlFor="email">
@@ -136,7 +136,7 @@ const handleSubmit = async (e) => {
                             onFocus={() => setEmailFocus(true)}
                             onBlur={() => setEmailFocus(false)}
                         />
-                        <p id="uidnote" className={nameFocus && email && !validEmail ? "relative text-sm rounded-lg bg-black text-white p-1 bottom-[-10px]" : "absolute top-[-9999px] left-[-9999px]"}>
+                        <p id="uidnote" className={emailFocus && email && !validEmail ? "relative text-sm rounded-lg bg-black text-white p-1 bottom-[-10px]" : "absolute top-[-9999px] left-[-9999px]"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
                             Must begin with a letter.<br />

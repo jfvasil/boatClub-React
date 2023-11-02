@@ -26,9 +26,10 @@ const NewsItems = ({role}) => {
         const response = await axiosPrivate.delete(`/api/news/${newsId}`)
        
           fetchNewsItems()
-        
+          console.log(response)
       }catch (error) {
         console.error('Failed to delete', error)
+        
       }
    }
 
@@ -47,7 +48,7 @@ const NewsItems = ({role}) => {
       unsubscribe()
      
     }
-  }, [])
+  })
 
   if (newsItems.length === 0) {
     return <div>Loading...</div>
