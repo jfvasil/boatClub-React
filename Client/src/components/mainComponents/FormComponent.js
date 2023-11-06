@@ -38,7 +38,7 @@ const handleFormSubmit = async (e) => {
       <div className="lg:w-1/2 md:w-2/3 mx-auto">
         <div className="flex flex-wrap -m-2">
           <form onSubmit={handleFormSubmit}>
-          <div className="p-2 w-1/2">
+          <div className="p-2 w-full">
             <div className="relative">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
               <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)}
@@ -50,7 +50,7 @@ const handleFormSubmit = async (e) => {
                   />
             </div>
           </div>
-          <div className="p-2 w-1/2">
+          <div className="p-2 w-full">
             <div className="relative">
               <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
               <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}
@@ -63,7 +63,7 @@ const handleFormSubmit = async (e) => {
 
             </div>
           </div>
-          <div className="p-2 w-full">
+          <div className="p-2 w-screen md:w-full">
             <div className="relative">
               <label htmlFor="message" className="leading-7 text-sm text-gray-600">Message</label>
               <ValidationError 
