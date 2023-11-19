@@ -10,7 +10,19 @@ const HeroWithMap = () => {
       <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Lake Wickaboag Boat Club
         <span className="hidden lg:inline-block">Tagline?</span>
       </h1>
-      <p className="mb-8 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque sagittis purus sit amet. Urna molestie at elementum eu facilisis sed odio morbi. In iaculis nunc sed augue lacus.</p>
+      <p className="mb-8 leading-relaxed">
+        <span className="mb-4 block">LWBC is located on 42 Lakeview Ave West Brookfield Ma 01585</span>
+        
+        <span className="mb-3 block">
+        From the east:
+        take Rte 9 to center of West Brookfield. At the lights take a right onto Cottage Street. Continue past the town beach on left. Go up and around corner. Lakeview Ave will be a sharp left down into parking lot. 
+        </span>
+        <span className="mb-3 block">
+        From the west:
+        take Rte 9 to center of West Brookfield. At the lights get in left land and take left onto Cottage Street. Continue past town beach on left. Go up and around corner. Lakeview Ave will be a sharp left down into parking lot. 
+        </span>
+       <span className="mb-3 block"> *There is a privacy gate at entrance. Scan keycard.</span>
+        </p>
     </div>
   </div>
 </section>

@@ -1,15 +1,15 @@
+import application from '../../images/boat-club-application.pdf'
 
-
-export const ApplicationDownload = (onClick) => {
+export const ApplicationDownload = () => {
   return (
     
     <div className="my-10">
          <h2 className=" text-2xl mb-4">
         Looking for an application to join?
         </h2>
-        <button onClick={onClick} className="btn btn-md lg:btn-lg text-xl">
+        <a href={application}><button className="btn btn-md lg:btn-lg text-xl">
         Click Here to Download
-        </button>
+        </button></a>
     </div>
 
   )

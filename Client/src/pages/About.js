@@ -11,9 +11,9 @@ const About = ({req}) => {
     return (
     <>
         <Header req={req} />
-        <HeroWithMap />
         <HeroWithPic h1Text={titleText} pText={historyP} 
         alt={'Old boat club pic'} image={oldLakePic}/>
+        <HeroWithMap />
         <Gallery />
         <MainFooter />
         </>
