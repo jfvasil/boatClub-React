@@ -3,8 +3,6 @@ import MobileNav from '../subComponents/MobileNav'
 import { useState } from 'react'
 import useAuth from '../../hooks/useAuth'
 import flag from '../../images/flag.jpg'
-import { faBars, faTimes} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
 const Header = () => {
@@ -13,22 +11,19 @@ const Header = () => {
 const location = useLocation()
 const {auth} = useAuth()
 const [showDropDown, setShowDropDown] = useState(false)
-const [mobileNav, setMobileNav] = useState(false)
+
 
 
 const DropDownToggle = () => {
   setShowDropDown(!showDropDown)
 }
 
-const toggleMobileNav = () => {
-  setMobileNav(!mobileNav)
-}
 
 
   return (
     <>
     <header className="text-gray-600">
-  <div className='container mx-auto flex p-5 flex-row justify-center'>
+  <div className='container mx-auto flex flex-row justify-center pb-4 pt-1 pl-4 sticky'>
   <h1 className="flex font-serif text-xl items-center justify-center text-gray-900  ml-6"> 
     <img src={flag} alt = 'boat club logo' className='w-12 h-12'></img>
       <span className="ml-4 text-xl md:text-4xl ">Lake Wickaboag Boat Club</span>
@@ -38,20 +33,9 @@ const toggleMobileNav = () => {
   </div>
     
       {/* mobile nav */}
-      <div className=' md:hidden flex flex-col items-center bg-gradient-to-r from-green-400 to-blue-500 text-black pt-4 pb-4 '>
-      {mobileNav ? (
-         <>
-          <button className='ml-5 self-start text-black hover:text-red-200 text-3xl' onClick={toggleMobileNav}>
-          <FontAwesomeIcon icon={faTimes} />
-          </button>
-          <MobileNav />
-          </>) : (
-      <button className=' text-gray-600 hover:text-red-200 text-3xl' onClick={toggleMobileNav}>
-          <FontAwesomeIcon icon={faBars} />
-        </button>
-       
-        )}
-        </div>
+      
+        <MobileNav />
+        
         {/*desktp nav */}
   <div className=' hidden md:flex justify-center bg-gradient-to-r from-green-400 to-blue-500 text-black'>
     <nav className='flex  items-center justify-between md:text-xl mt-7 mb-3'>
