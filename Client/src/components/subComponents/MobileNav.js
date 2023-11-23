@@ -74,13 +74,13 @@ const toggleMobileNav = () => {
           </div>)}
         </div>
       ) : (
-        <Link to='/login' className='hover:text-red-200'> Member Log In </Link>
+        <Link to='/login' className='hover:text-red-600'> Member Log In </Link>
 
       )}
     </nav>
     </>
   ) :
-    (<button className=' text-gray-600 hover:text-red-200 text-3xl absolute bottom-9 left-4' onClick={toggleMobileNav}>
+    (<button className=' text-gray-600  text-3xl absolute bottom-10 left-3' onClick={toggleMobileNav}>
   <FontAwesomeIcon icon={faBars} />
 </button>
 )}

@@ -1,6 +1,7 @@
 import lake from '../../images/BoatClubPavillion.jpg'
 import { useState } from 'react'
 import FullScreenModal from '../utilityComponents/FullScreenModal'
+import GalleryDesktop from './GalleryDesktop'
 
 const Gallery = () => {
 
@@ -18,7 +19,8 @@ const Gallery = () => {
   }
 
   return (
-<section className="text-gray-600 body-font">
+<div>
+<section className="text-gray-600 body-font md:hidden">
   <div>
     <h2 className='text-3xl leading-10 text-center pb-4 font-semibold'>Enjoy a little gallery of the lake</h2>
     <h4 className='text-xl leading-12 text-center'>Scroll left to view  more or click to see fullscreen</h4>
@@ -64,6 +66,10 @@ const Gallery = () => {
       <FullScreenModal Url={selectedImage} onClose={closeModal} />
     )}
 </section>
+<section className='hidden md:block'>
+  <GalleryDesktop />
+</section>
+</div>
   )
 }
 
