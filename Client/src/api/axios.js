@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://lake-wickaboag-backend-da96a41ce10c.herokuapp.com'
+const BASE_URL = 'http://18.118.4.119:3000/'
 // const BASE_URL = 'http://localhost:3000/'
 
 export default axios.create({
