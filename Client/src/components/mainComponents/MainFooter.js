@@ -38,12 +38,13 @@ const MainFooter = () => {
     </div>
   </div>
   <div className="bg-gray-100">
-    <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p className="text-gray-500 text-sm text-center sm:text-left">© 2023 Lake Wickaboag Boat Club —
-        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@JohnnyFVasil</a>
+    <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col md:flex-row">
+      <p className="text-gray-500 text-sm text-center sm:text-left md:mt-4">© 2023 Lake Wickaboag Boat Club —
+        <a href="https://twitter.com/johnnyfvasil" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@JohnnyFVasil</a>
       </p>
       {auth.accessToken && (
-        <button className='bg-blue-300 text-lg' onClick={signOut}>Sign Out</button>
+        <button className='bg-blue-400 text-lg ml-5 px-2 py-2 focus:outline-none focus:shadow-outline rounded-md hover:bg-blue-600 text-white font-bold md:mb-7' 
+        onClick={signOut}>Sign Out</button>
       )}
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
         <a href='https://www.facebook.com/groups/2819013791737133' className="text-gray-500">
@@ -51,11 +52,11 @@ const MainFooter = () => {
             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
           </svg>
         </a>
-        <a href='tel:4138135751' className="text-gray-500 ml-4">
+        {/* <a href='tel:4138135751' className="text-gray-500 ml-4">
             <svg fill="currentColor" className="w-5 h-5"strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 512 512">
                 <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
                 </svg>
-                </a>
+                </a> */}
 
       </span>
     </div>

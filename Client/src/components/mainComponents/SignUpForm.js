@@ -97,11 +97,11 @@ const handleSubmit = async (e) => {
                 </p>
             </section>
         ) : (
-            <section className='container mx-center bg-gray-100 font-serif '>
+            <section className='container mx-center bg-gray-100 font-serif max-w-md mx-auto mt-8 p-6 rounded-md shadow-md '>
             <p ref={errRef} className={errMsg ? "bg-red-100 text-red-400 p-1 mb-1" : "absolute top-[-9999px] left-[-9999px]"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign Up</h1>
+            <h3 className="text-xl font-semibold mb-4">Sign up to access member features</h3>
             <form className='flex flex-col justify-evenly flex-grow pb-1 ' onSubmit={handleSubmit}>
-                <label htmlFor="name">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                     Name:
                 </label>
                 <input
@@ -114,11 +114,12 @@ const handleSubmit = async (e) => {
                     required
                     aria-invalid={validEmail ? "false" : "true"}
                     aria-describedby="uidnote"
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:shadow-outline"
                     // onFocus={() => setNameFocus(true)}
                     // onBlur={() => setNameFocus(false)}
                 />
 
-                <label htmlFor="email">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                             Email:
                             <FontAwesomeIcon icon={faCheck} className={validEmail ? "text-green-200 ml-1" : "hidden"} />
                             <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hidden" : "text-red-300 ml-1"} />
@@ -133,6 +134,7 @@ const handleSubmit = async (e) => {
                             required
                             aria-invalid={validEmail ? "false" : "true"}
                             aria-describedby="uidnote"
+                            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:shadow-outline"
                             onFocus={() => setEmailFocus(true)}
                             onBlur={() => setEmailFocus(false)}
                         />
@@ -145,7 +147,7 @@ const handleSubmit = async (e) => {
 
 
 
-                <label htmlFor="password">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                     Password:
                     <FontAwesomeIcon icon={faCheck} className={validPwd ? "text-green-200 ml-1" : "hidden"} />
                     <FontAwesomeIcon icon={faTimes} className={validPwd || !password ? "hidden" : "text-red-300 ml-1"} />
@@ -158,6 +160,7 @@ const handleSubmit = async (e) => {
                     required
                     aria-invalid={validPwd ? "false" : "true"}
                     aria-describedby="pwdnote"
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:shadow-outline"
                     onFocus={() => setPwdFocus(true)}
                     onBlur={() => setPwdFocus(false)}
                 />
@@ -169,7 +172,7 @@ const handleSubmit = async (e) => {
                 </p>
 
 
-                <label htmlFor="confirm_pwd">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirm_pwd">
                     Confirm Password:
                     <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "text-green-200 ml-1" : "hidden"} />
                     <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hidden" : "text-red-300 ml-1"} />
@@ -182,6 +185,7 @@ const handleSubmit = async (e) => {
                     required
                     aria-invalid={validMatch ? "false" : "true"}
                     aria-describedby="confirmnote"
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:shadow-outline"
                     onFocus={() => setMatchFocus(true)}
                     onBlur={() => setMatchFocus(false)}
                 />
@@ -190,14 +194,17 @@ const handleSubmit = async (e) => {
                     Must match the first password input field.
                 </p>
 
-                <button disabled={!validEmail || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                <button
+                  className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
+                 disabled={!validEmail || !validPwd || !validMatch ? true : false}>Sign Up</button>
             </form>
-            <p>
-                Already singed up?<br />
-                <span className="inline-block">
+            <p className="mt-4 text-sm text-gray-600">
+                Already signed up?<br />
+                <span className="inline-block text-blue-500 underline">
                     <Link to="/">Sign In</Link>
                 </span>
             </p>
+        
         </section>
         )}
     </>

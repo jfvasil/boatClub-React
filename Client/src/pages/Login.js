@@ -44,7 +44,7 @@ const Login = () => {
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const role = response?.data?.role;
-            setAuth({ email, password, role, accessToken })
+            setAuth({ email, role, accessToken })
             setEmail('')
             setPwd('')
             navigate(from, { replace: true })
@@ -52,9 +52,9 @@ const Login = () => {
             if (!err?.response) {
                 setErrMsg('No Server Response');
             } else if (err.response?.status === 400) {
-                setErrMsg('Missing Username or Password')
+                setErrMsg('Missing Email or Password')
             } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized')
+                setErrMsg('Incorrect Email or password')
             } else {
                 setErrMsg('Login Failed')
             }
@@ -74,7 +74,7 @@ const Login = () => {
         <>
         <Header />
         <section className='flex flex-col items-center justify-center h-screen'>
-            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+            <p ref={errRef} className={errMsg ? "text-red-500" : "hidden"} aria-live="assertive">{errMsg}</p>
             <h1 className='text-2xl font-medium mb-4'>Sign In</h1>
             <form onSubmit={handleSubmit} className='text-center'>
                 <label htmlFor="email" className='block mb-2'>Email:</label>

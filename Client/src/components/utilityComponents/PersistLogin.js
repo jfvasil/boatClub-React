@@ -24,10 +24,10 @@ const PersistLogin = () => {
             }
         }
 
-        !auth.accessToken && persist ? verifyRefreshToken() : setIsLoading(false)
+        !auth?.accessToken && persist ? verifyRefreshToken() : setIsLoading(false)
 
         return () => isMounted = false
-    }, [auth.accessToken, persist, refresh])
+    }, [])
 
     useEffect(() => {
         console.log(`isLoading: ${isLoading}`)

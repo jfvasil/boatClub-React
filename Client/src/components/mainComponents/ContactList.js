@@ -2,11 +2,11 @@ import boatIcon from "../../images/9035720_boat_sharp_icon.png"
 
 const ContactList = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font md:relative md:top-24">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-col text-center w-full mb-20">
       <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Boat Club Officers</h1>
-      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">All of those that make the boat club function!</p>
     </div>
     <div className="flex flex-wrap -m-2">
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
@@ -20,73 +20,73 @@ const ContactList = () => {
       </div>
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/84x84"></img>
+          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">Henry Letham</h2>
-            <p className="text-gray-500">CTO</p>
+            <h2 className="text-gray-900 title-font font-medium">VIn Provencher</h2>
+            <p className="text-gray-500">Vice Commodore</p>
           </div>
         </div>
       </div>
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/88x88"></img>
+          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">Oskar Blinde</h2>
-            <p className="text-gray-500">Founder</p>
+            <h2 className="text-gray-900 title-font font-medium">Scott Trombley</h2>
+            <p className="text-gray-500">Rear Commodore</p>
           </div>
         </div>
       </div>
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/90x90"></img>
+          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">John Doe</h2>
-            <p clasNames="text-gray-500">DevOps</p>
+            <h2 className="text-gray-900 title-font font-medium">Tom Ducasse</h2>
+            <p clasNames="text-gray-500">Captain</p>
           </div>
         </div>
       </div>
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/94x94"></img>
+          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">Martin Eden</h2>
-            <p className="text-gray-500">Software Engineer</p>
+            <h2 className="text-gray-900 title-font font-medium">Ron Garceau</h2>
+            <p className="text-gray-500">Lieutenant</p>
           </div>
         </div>
       </div>
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/98x98"></img>
+          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">Boris Kitua</h2>
-            <p className="text-gray-500">UX Researcher</p>
+            <h2 className="text-gray-900 title-font font-medium">Jenn Vasil</h2>
+            <p className="text-gray-500">Secrtary</p>
           </div>
         </div>
       </div>
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/100x90"></img>
+          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">Atticus Finch</h2>
-            <p className="text-gray-500">QA Engineer</p>
+            <h2 className="text-gray-900 title-font font-medium">Pam Clark</h2>
+            <p className="text-gray-500">House Chairman</p>
           </div>
         </div>
       </div>
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/104x94"></img>
+          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">Alper Kamu</h2>
-            <p className="text-gray-500">System</p>
+            <h2 className="text-gray-900 title-font font-medium">Chet Kurr</h2>
+            <p className="text-gray-500">Entertainment</p>
           </div>
         </div>
       </div>
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/108x98"></img>
+          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">Rodrigo Monchi</h2>
-            <p className="text-gray-500">Product Manager</p>
+            <h2 className="text-gray-900 title-font font-medium">Ken Henneman, Bill Hissem, Gerry Nichols, Chris Dimarzio</h2>
+            <p className="text-gray-500">Directors</p>
           </div>
         </div>
       </div>

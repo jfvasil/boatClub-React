@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Logout = () => {
-  const { setAuth } = useAuth();
+  const {setAuth, setPersist } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,6 +14,8 @@ const Logout = () => {
             withCredentials: true
         });
         setAuth(null);
+        setPersist(false)
+  
         navigate('/home');
       } catch (error) {
         console.error('Logout error:', error);
@@ -21,7 +23,7 @@ const Logout = () => {
     };
 
     logout();
-  }, [setAuth, navigate]);
+  }, [setAuth, navigate, setPersist]);
 
   return <div>Logging out...</div>
 };

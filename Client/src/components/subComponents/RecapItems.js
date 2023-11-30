@@ -50,7 +50,9 @@ const RecapItems = ({role}) => {
   })
 
   if (recaps.length === 0) {
-    return <div>Loading...</div>
+    return <div className='text-3xl w-full py-4 font-mono pl-4'>
+     Nothing to display...
+      </div>
   }
 
   return (
