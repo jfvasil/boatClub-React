@@ -13,6 +13,7 @@ import MeetingRecaps from './pages/MeetingRecaps'
 import Events from './pages/Events'
 import NewsAndUpdates from './pages/NewsAndUpdates'
 import PersistLogin from './components/utilityComponents/PersistLogin'
+import EmailEntry from './components/mainComponents/passwordRecovery/EmailEntry'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <Route exact path = '/Login' element = {<Login />} />
       <Route exact path='/signup' element = {<SignupForm />} />
       <Route exact path='logout' element= {<Logout />} />
+      <Route exact path='/reset-email-entry' element={<EmailEntry />} />
       <Route exact path = '/unauthorized' element = {<Unauthorized />} />
 
       {/* protected routes */}

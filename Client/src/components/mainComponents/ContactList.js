@@ -22,7 +22,7 @@ const ContactList = () => {
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
           <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">VIn Provencher</h2>
+            <h2 className="text-gray-900 title-font font-medium">Vin Provencher</h2>
             <p className="text-gray-500">Vice Commodore</p>
           </div>
         </div>
@@ -59,7 +59,7 @@ const ContactList = () => {
           <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={boatIcon}></img>
           <div className="flex-grow">
             <h2 className="text-gray-900 title-font font-medium">Jenn Vasil</h2>
-            <p className="text-gray-500">Secrtary</p>
+            <p className="text-gray-500">Secretary</p>
           </div>
         </div>
       </div>

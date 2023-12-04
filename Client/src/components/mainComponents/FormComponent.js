@@ -1,11 +1,14 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
   
 
 const FormComponent = () => {
 
 const [state, handleSubmit] = useForm("mzbqprjw")
+
+const {auth} = useAuth()
 
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
@@ -33,7 +36,12 @@ const handleFormSubmit = async (e) => {
     <div className="container px-5 py-24 mx-auto">
       <div className="flex flex-col text-center w-full mb-12">
         <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get in Touch with Us</h1>
-        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Please fill out all fields below inlcuding a message. We will get back to you as soon as we can.</p>
+        <p className={`${auth?.accessToken && "hidden"} lg:w-2/3 mx-auto leading-relaxed text-base`}>Please fill out all fields below inlcuding a message. We will get back to you as soon as we can.</p>
+        {auth?.accessToken && (
+          <p className='lg:w-2/3 mx-auto leading-relaxed text-base'>Members can fill out this form or email the club directly at: 
+            lakewickaboagboatclub@gmail.com
+            Be sure to include that you are a member in the subject line!</p>
+        )}
       </div>
       <div className="lg:w-1/2 md:w-2/3 mx-auto">
         <div className="flex flex-wrap -m-2">
