@@ -22,6 +22,12 @@ const userSchema = new mongoose.Schema({
   },
   refreshToken: {
     type: String
+  }, 
+  resetCode: {
+    type: String
+  }, 
+  codeExpiration: {
+    type: Date
   }
 })
 

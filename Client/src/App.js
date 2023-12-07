@@ -14,10 +14,16 @@ import Events from './pages/Events'
 import NewsAndUpdates from './pages/NewsAndUpdates'
 import PersistLogin from './components/utilityComponents/PersistLogin'
 import EmailEntry from './components/mainComponents/passwordRecovery/EmailEntry'
+import PasswordReset from './components/mainComponents/passwordRecovery/PasswordReset'
+// import RecoveryEmail from './context/RecoveryProvider'
+
 
 
 function App() {
+  
   return (
+
+    
   
    <Routes>
      
@@ -33,8 +39,11 @@ function App() {
       <Route exact path = '/Login' element = {<Login />} />
       <Route exact path='/signup' element = {<SignupForm />} />
       <Route exact path='logout' element= {<Logout />} />
-      <Route exact path='/reset-email-entry' element={<EmailEntry />} />
       <Route exact path = '/unauthorized' element = {<Unauthorized />} />
+      {/* <Route element={<RecoveryEmail />} > */}
+      <Route exact path='/reset-email-entry' element={<EmailEntry />} />
+      <Route exact path='/reset-password' element={<PasswordReset />} />
+      {/* </Route> */}
 
       {/* protected routes */}
       <Route element={<RequireAuth allowedRoles={['admin', 'user']} />}>

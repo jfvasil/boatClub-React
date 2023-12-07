@@ -1,22 +1,23 @@
 import { useNavigate, useLocation } from 'react-router-dom'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect} from 'react'
 import axios from '../../../api/axios'
+// import RecoveryContext from "../../../context/RecoveryProvider"
 
 const EmailEntry = () => {
 
+
+
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || "/"
+    const from = location.state?.from?.pathname || "/reset-password"
 
     const userRef = useRef()
     const errRef = useRef()
 
     const [email, setEmail] = useState('')
-    const [validEmail, setValidEmail] = useState(false);
     const [errMsg, setErrMsg] = useState('')
    
 
-    const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
     useEffect(() => {
         userRef.current.focus()
@@ -31,9 +32,9 @@ const EmailEntry = () => {
     }
 
     useEffect(() => {
-        setValidEmail(EMAIL_REGEX.test(email))
-    }, [email, EMAIL_REGEX])
 
+        localStorage.setItem('email', email)
+    },[email])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -55,6 +56,8 @@ const EmailEntry = () => {
             );
             console.log(JSON.stringify(response?.data))
             setEmail('')
+           
+            
         
             navigate(from, { replace: true })
         } catch (err) {
@@ -84,12 +87,12 @@ const EmailEntry = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             required
-            aria-invalid={validEmail ? "false" : "true"}
+    
             className ='w-full py-2 px-3 mb-2 border rounded focus:outline-none focus:border-indigo-500'
         />
              <button
              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
-             disabled={!validEmail ? true : false}>Get Code</button>
+            >Get Code</button>
 
     </form>
     </section>
