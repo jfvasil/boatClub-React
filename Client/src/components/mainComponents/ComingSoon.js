@@ -1,7 +1,7 @@
 import { faCog} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Download from '../subComponents/Download'
-import flyer from '/Users/Johnny/Desktop/repos/boat-club-react.orig/Client/src/images/LWBCflyer2.pdf'
+import flyer from '../../images/LWBCflyer2.pdf'
 
 const ComingSoon = () => {
   return (
