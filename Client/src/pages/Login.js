@@ -51,9 +51,9 @@ const Login = () => {
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
-            } else if (err.response?.status === 400) {
-                setErrMsg('Missing Email or Password')
             } else if (err.response?.status === 401) {
+                setErrMsg('Missing Email or Password')
+            } else if (err.response?.status === 502) {
                 setErrMsg('Incorrect Email or password')
             } else {
                 setErrMsg('Login Failed')
