@@ -109,7 +109,12 @@ const Login = () => {
                     <label htmlFor="persist">Trust This Device</label>
                 </div>
             </form>
-            <p className='mt-4'>
+            <div className='flex flex-col items-center ml-6 mt-2'>
+            <Link to='/reset-email-entry'>
+            <p className='text-gray-600 hover:underline align-middle'>Forgot Password?</p>
+            </Link>
+            </div>
+            <p className='mt-4 ml-6'>
                 Need an Account?<br />
                 <span>
                     <Link to="/signup" className='text-blue-500 hover:underline'>Sign Up</Link>

@@ -1,17 +1,17 @@
 import axios from "../../../api/axios"
-import { useNavigate, useLocation } from 'react-router-dom'
-import { useState, useEffect, useRef } from "react"
+import { Link } from 'react-router-dom'
+import { useState, useEffect, useRef, useMemo } from "react"
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // import RecoveryContext from "../../../context/RecoveryProvider"
 
 export const PasswordReset = () => {
 
-  const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
+  const PWD_REGEX = useMemo(() => {
 
-    // const navigate = useNavigate()
-    // const location = useLocation()
-    // const from = location.state?.from?.pathname || "/"
+ return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
+
+  }, [])
 
     const errRef = useRef()
 
@@ -90,7 +90,7 @@ export const PasswordReset = () => {
 useEffect(() => {
   setValidNewPassword(PWD_REGEX.test(newPassword))
   setValidConfirmPassword(newPassword === confirmPassword)
-}, [newPassword, confirmPassword])
+}, [newPassword, confirmPassword, PWD_REGEX])
 
   const generateCode = () => {
     return Math.floor(Math.random() * 9000 + 1000)
@@ -135,7 +135,12 @@ useEffect(() => {
   return (
   <>
     {success ? (
-      <h1>Success</h1>
+      <div className="container flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-3xl mb-3 pb-2">Password Reset!</h1>
+      <Link to='/login'>
+      <p className="hover:underline text-blue-600 text-xl">Return to Login</p>
+      </Link>
+      </div>
     ) : (
     <div className="flex justify-center items-center w-screen h-screen  bg-gray-50">
       <div className="bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl">
@@ -317,7 +322,7 @@ useEffect(() => {
                       }}
                       onClick={() => resendCode()}
                     >
-                      {disable ? `Resend COde in ${timerCount}s` : "Resend Code"}
+                      {disable ? `Resend Code in ${timerCount}s` : "Resend Code"}
                     </button>
                   </div>
                 </div>

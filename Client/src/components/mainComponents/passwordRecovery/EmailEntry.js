@@ -91,10 +91,14 @@ const EmailEntry = () => {
             className ='w-full py-2 px-3 mb-2 border rounded focus:outline-none focus:border-indigo-500'
         />
              <button
-             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
-            >Get Code</button>
+             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline">
+            Get Code
+            </button>
 
     </form>
+    <div className='containe mt-4 text-lg'>
+    <h4>A 4 digit code will be sent to your email.</h4>
+    </div>
     </section>
   )
 }

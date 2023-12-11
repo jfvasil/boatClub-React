@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const BASE_URL = 'https://api.boat-club-backend.xyz/'
-const BASE_URL = 'http://localhost:3000/'
+const BASE_URL = 'https://api.boat-club-backend.xyz/'
+// const BASE_URL = 'http://localhost:3000/'
 
 export default axios.create({
     baseURL: BASE_URL
