@@ -1,4 +1,9 @@
-import lake from '../../images/BoatClubPavillion.jpg'
+import photo1 from '../../images/lake photos/1.jpg'
+import photo2 from '../../images/lake photos/2.jpg'
+import photo3 from '../../images/lake photos/3.jpg'
+import photo4 from '../../images/lake photos/4.jpg'
+import photo5 from '../../images/lake photos/5.jpg'
+import photo6 from '../../images/lake photos/boatClubHouse.jpg'
 import { useState } from 'react'
 import FullScreenModal from '../utilityComponents/FullScreenModal'
 import GalleryDesktop from './GalleryDesktop'
@@ -27,40 +32,40 @@ const Gallery = () => {
   </div>
 <div className="carousel carousel-center p-4 space-x-4 bg-neutral rounded-box">
   <div className="carousel-item w-full ">
-    <img src={lake} alt='default' 
+    <img src={photo1} alt='default' 
     className="rounded-3xl object-contain"
-    onClick={() => openModal(lake)} />
+    onClick={() => openModal(photo1)} />
   </div> 
   <div className="carousel-item w-full ">
-    <img src={lake}  alt='default' 
+    <img src={photo2}  alt='default' 
     className="rounded-box object-contain"
-    onClick={() => openModal(lake)} />
+    onClick={() => openModal(photo2)} />
   </div> 
   <div className="carousel-item w-full">
-    <img src={lake} alt='default' 
+    <img src={photo3} alt='default' 
     className="rounded-box object-contain"
-    onClick={() => openModal(lake)} />
+    onClick={() => openModal(photo3)} />
   </div> 
   <div className="carousel-item w-full">
-    <img src={lake}  alt='default' 
+    <img src={photo4}  alt='default' 
     className="rounded-box object-cover" 
-    onClick={() => openModal(lake)}/>
+    onClick={() => openModal(photo4)}/>
   </div> 
   <div className="carousel-item w-full">
-    <img src={lake}  alt='default' 
+    <img src={photo5}  alt='default' 
     className="rounded-box object-contain"
-    onClick={() => openModal(lake)} />
+    onClick={() => openModal(photo5)} />
   </div> 
   <div className="carousel-item w-full">
-    <img src={lake}  alt='default' 
+    <img src={photo6}  alt='default' 
     className="rounded-box object-contain"
-    onClick={() => openModal(lake)} />
+    onClick={() => openModal(photo6)} />
   </div> 
-  <div className="carousel-item w-full">
+  {/* <div className="carousel-item w-full">
     <img src={lake} alt='default' 
     className="rounded-box object-contain"
     onClick={() => openModal(lake)} />
-  </div>
+  </div> */}
 </div>
     {isModelOpen && (
       <FullScreenModal Url={selectedImage} onClose={closeModal} />
