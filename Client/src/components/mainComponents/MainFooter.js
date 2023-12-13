@@ -23,19 +23,19 @@ const MainFooter = () => {
       <p className="mt-2 text-sm text-black">"Ashore or afloat, create lasting memories for the whole family!"</p>
     </div>
     <div className="flex-grow flex md:pr-20  md:text-left text-center order-first md:flex-wrap">
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+      <div className="lg:w-1/4 md:w-1/2 w-full pr-4 md:pl-4">
         <Link to='/'><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">Home</h2></Link>
         </div>
-        <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+        <div className="lg:w-1/4 md:w-1/2 w-full pr-4 md:pl-4">
         <Link to='/About'><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">About Us</h2></Link>
         </div>
-        <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+        <div className="lg:w-1/4 md:w-1/2 w-full pr-4 md:pl-4">
         <Link to="/Form"><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">Get In Touch</h2></Link>
     </div>
-    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+    <div className="lg:w-1/4 md:w-1/2 w-full pr-4 md:pl-4">
         <Link to="/Rules-And-Faq"><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">FAQ</h2></Link>
     </div>
-    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+    <div className="lg:w-1/4 md:w-1/2 w-full pr-4 md:pl-4">
         <Link to="/Shop"><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">Shop</h2></Link>
         </div>
     </div>
