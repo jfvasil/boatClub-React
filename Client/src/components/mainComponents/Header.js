@@ -37,11 +37,12 @@ const DropDownToggle = () => {
         <MobileNav />
         
         {/*desktp nav */}
-  <div className=' hidden md:flex justify-center bg-gradient-to-r from-green-400 to-blue-500 text-black'>
+  <div className=' hidden md:flex justify-center bg-gradient-to-r from-green-400 to-blue-500 text-black font-semibold'>
     <nav className='flex  items-center justify-between md:text-xl mt-7 mb-3'>
       <Link to = '/' className={`mr-10 hover:text-red-200 ${location.pathname === '/' ? 'underline' : ''}`}>Home</Link>
       <Link to = '/About' className={`mr-10 hover:text-red-200 ${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
       <Link to = '/Form' className={`mr-10 hover:text-red-200 ${location.pathname === '/Form' ? 'underline' : ''}`}>Get In Touch</Link>
+      <Link to = '/Rules-And-Faq' className={`mr-10 hover:text-red-200 ${location.pathname === '/Rules-And-Faq' ? 'underline' : ''}`}>FAQ</Link>
       <Link to = '/Shop' className={`mr-10 hover:text-red-200 ${location.pathname === '/Shop' ? 'underline' : ''}`}>Shop</Link>
       {auth.accessToken ? 
         (

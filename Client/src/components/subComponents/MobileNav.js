@@ -34,10 +34,11 @@ const toggleMobileNav = () => {
        <button className='ml-5 self-start text-black hover:text-red-200 text-3xl' onClick={toggleMobileNav}>
        <FontAwesomeIcon icon={faTimes} />
        </button>
-    <nav className='flex flex-col text-xl min-h-screen'>
+    <nav className='font-semibold flex flex-col text-xl min-h-screen'>
     <Link to = '/' className={`mb-5 hover:text-red-200 ${location.pathname === '/' ? 'underline' : ''}`}>Home</Link>
     <Link to = '/About' className={`mb-5 hover:text-red-200 ${location.pathname === '/About' ? 'underline' : ''}`}>About Us</Link>
     <Link to = '/Form' className={`mb-5 hover:text-red-200 ${location.pathname === '/Form' ? 'underline' : ''}`}>Get In Touch</Link>
+    <Link to = '/Rules-And-Faq' className={`mb-5 hover:text-red-200 ${location.pathname === '/Rules-And-Faq' ? 'underline' : ''}`}>FAQ</Link>
     <Link to = '/Shop' className={`mb-5 hover:text-red-200 ${location.pathname === '/Shop' ? 'underline' : ''}`}>Shop</Link>
     {auth.accessToken ? 
       (

@@ -15,6 +15,7 @@ import NewsAndUpdates from './pages/NewsAndUpdates'
 import PersistLogin from './components/utilityComponents/PersistLogin'
 import EmailEntry from './components/mainComponents/passwordRecovery/EmailEntry'
 import PasswordReset from './components/mainComponents/passwordRecovery/PasswordReset'
+import RulesAndFaq from './pages/RulesAndFaq'
 // import RecoveryEmail from './context/RecoveryProvider'
 
 
@@ -36,6 +37,7 @@ function App() {
       <Route exact path = '/About' element = {<About  />} />
        <Route exact path = '/Form' element = {<Form  />} />
       <Route exact path = '/Shop' element = {<Shop />} />
+      <Route exact path = '/Rules-And-Faq' element={<RulesAndFaq />} />
       <Route exact path = '/Login' element = {<Login />} />
       <Route exact path='/signup' element = {<SignupForm />} />
       <Route exact path='logout' element= {<Logout />} />

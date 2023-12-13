@@ -27,7 +27,7 @@ const Gallery = () => {
 <div>
 <section className="text-gray-600 body-font md:hidden">
   <div>
-    <h2 className='text-3xl leading-10 text-center pb-4 font-semibold'>Enjoy a little gallery of the lake</h2>
+    <h2 className='text-3xl leading-10 text-center pb-4 font-semibold underline'>Enjoy a little gallery of the lake</h2>
     <h4 className='text-xl leading-12 text-center'>Scroll left to view  more or click to see fullscreen</h4>
   </div>
 <div className="carousel carousel-center p-4 space-x-4 bg-neutral rounded-box">

@@ -17,12 +17,12 @@ const MainFooter = () => {
     <footer className="text-gray-600 body-font  bg-red-600 ">
   <div className="container mx-auto px-5 py-12 flex md:items-center  md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
-      <p className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <p className="flex title-font  font-medium items-center md:justify-start justify-center text-gray-900">
         <span className=" text-xl">Lake Wickaboag Boat Club</span>
       </p>
       <p className="mt-2 text-sm text-black">"Ashore or afloat, create lasting memories for the whole family!"</p>
     </div>
-    <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+    <div className="flex-grow flex md:pr-20  md:text-left text-center order-first md:flex-wrap">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
         <Link to='/'><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">Home</h2></Link>
         </div>
@@ -30,7 +30,10 @@ const MainFooter = () => {
         <Link to='/About'><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">About Us</h2></Link>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <Link to="/Join"><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">Get In Touch</h2></Link>
+        <Link to="/Form"><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">Get In Touch</h2></Link>
+    </div>
+    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+        <Link to="/Rules-And-Faq"><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">FAQ</h2></Link>
     </div>
     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
         <Link to="/Shop"><h2 className="title-font font-medium text-gray-900 tracking-widest text-lg mb-3 hover:text-gray-900">Shop</h2></Link>
