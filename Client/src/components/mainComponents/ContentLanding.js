@@ -9,7 +9,7 @@ const ContentLanding = () => {
     Welcome to Lake Wickaboag Boat Club, your exclusive gateway 
     to the tranquil waters of our small town gem. 
     Nestled on the shores of Lake Wickaboag and 
-    located in the quaint town of West Brookfield Massachusetts, 
+    located in quaint West Brookfield Massachusetts, 
     our private boat club offers a unique 
     and intimate experience for boating, sailing & kayak enthusiasts. 
      Members enjoy a tight-knit community as well as the serenity 
