@@ -1,9 +1,11 @@
-import photo1 from '../../images/lake photos/1.jpg'
+import photo1 from '../../images/lake photos/from-lake.jpg'
 import photo2 from '../../images/lake photos/2.jpg'
 import photo3 from '../../images/lake photos/3.jpg'
 import photo4 from '../../images/lake photos/4.jpg'
 import photo5 from '../../images/lake photos/5.jpg'
-import photo6 from '../../images/lake photos/boatClubHouse.jpg'
+import photo6 from '../../images/lake photos/can.jpg'
+import photo7 from '../../images/lake photos/duke.jpg'
+import photo8 from '../../images/lake photos/door.jpg'
 import { useState } from 'react'
 import FullScreenModal from '../utilityComponents/FullScreenModal'
 import GalleryDesktop from './GalleryDesktop'
@@ -61,11 +63,16 @@ const Gallery = () => {
     className="rounded-box object-contain"
     onClick={() => openModal(photo6)} />
   </div> 
-  {/* <div className="carousel-item w-full">
-    <img src={lake} alt='default' 
+   <div className="carousel-item w-full">
+    <img src={photo7} alt='default' 
     className="rounded-box object-contain"
-    onClick={() => openModal(lake)} />
-  </div> */}
+    onClick={() => openModal(photo7)} />
+  </div> 
+   <div className="carousel-item w-full">
+    <img src={photo8} alt='default' 
+    className="rounded-box object-contain"
+    onClick={() => openModal(photo8)} />
+  </div> 
 </div>
     {isModelOpen && (
       <FullScreenModal Url={selectedImage} onClose={closeModal} />

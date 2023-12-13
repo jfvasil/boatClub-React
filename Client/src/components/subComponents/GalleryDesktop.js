@@ -1,9 +1,9 @@
-import photo1 from '../../images/lake photos/1.jpg'
+import photo1 from '../../images/lake photos/duke.jpg'
 import photo2 from '../../images/lake photos/2.jpg'
 import photo3 from '../../images/lake photos/3.jpg'
 import photo4 from '../../images/lake photos/4.jpg'
 import photo5 from '../../images/lake photos/5.jpg'
-import photo6 from '../../images/lake photos/boatClubHouse.jpg'
+import photo6 from '../../images/lake photos/door.jpg'
 
 
 const GalleryDesktop = () => {
