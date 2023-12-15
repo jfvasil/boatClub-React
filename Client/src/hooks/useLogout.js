@@ -8,7 +8,7 @@ const useLogout = () => {
         setAuth({})
         persist && setPersist(false)
         try{
-            const response = await axios.post('/auth/logout',null, {
+            const response = await axios.post('/auth/logout', {
                 withCredentials: true,
             })
             console.log(response, auth, persist)
