@@ -6,12 +6,12 @@ const HeroWithPic = ({image,alt,h1Text,pText}) => {
   <div className="container flex-col mx-auto flex px-5 py-24 md:flex-row items-center">
     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 sm:order-1 md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <div>
-      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-semibold underline">
+      <h1 className="sm:text-4xl text-3xl mb-4 font-semibold">
         {h1Text}
       </h1>
       </div>
     <div className="sm:order-3">
-      <p className="body-font leading-relaxed">{pText}</p>
+      <p className="leading-relaxed">{pText}</p>
       </div>
     </div>
       <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:order-2">

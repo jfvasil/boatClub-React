@@ -4,7 +4,7 @@ const ContentLanding = () => {
   
     return(
   <div className="container px-5 py-24 mx-auto mt-10 md:mt-20 text-gray-600">
-    <div className="text-center font-semibold w-full body-font">
+    <div className="text-center font-semibold w-full font-sans">
     <p className="lg:w-2/3 mx-auto leading-10 text-xl md:text-3xl">
     Welcome to Lake Wickaboag Boat Club, your exclusive gateway 
     to the tranquil waters of our small town gem. 

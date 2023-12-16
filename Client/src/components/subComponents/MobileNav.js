@@ -81,7 +81,7 @@ const toggleMobileNav = () => {
     </nav>
     </>
   ) :
-    (<button className=' text-gray-600  text-3xl absolute bottom-10 left-3' onClick={toggleMobileNav}>
+    (<button className=' text-gray-600 text-3xl absolute bottom-6 left-3' onClick={toggleMobileNav}>
   <FontAwesomeIcon icon={faBars} />
 </button>
 )}
