@@ -11,11 +11,13 @@ const Form = ({req}) => {
     <Header req={req} />
     <ContactList />
     <div className="container">
-      <div className="flex flex-col md:flex-row items-center justify-center">
-        <FormComponent />
-        <Download file={application} 
+      <div className="flex flex-col md:flex-row items-center justify-center md:justify-between">
+      <Download file={application} 
         text={'Looking for an application to join?'} />
-    </div>
+          <div className="divider lg:divider-horizontal pb-5 text-xl md:ml-12">
+            OR</div> 
+        <FormComponent />
+        </div>
       </div>
     <MainFooter />
     </>

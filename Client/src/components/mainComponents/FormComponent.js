@@ -32,10 +32,10 @@ const handleFormSubmit = async (e) => {
 
 
   return (
-    <section className="text-gray-600 body-font relative">
-    <div className="container px-5 py-24 mx-auto">
+    <section className="text-gray-600 relative">
+    <div className="container px-5 pb-24 md:pt-24 md:ml-10">
       <div className="flex flex-col text-center w-full mb-12">
-        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get in Touch with Us</h1>
+        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-700">Get in Touch with Us</h1>
         <p className={`${auth?.accessToken && "hidden"} lg:w-2/3 mx-auto leading-relaxed text-base`}>Please fill out all fields below inlcuding a message. We will get back to you as soon as we can.</p>
         {auth?.accessToken && (
           <p className='lg:w-2/3 mx-auto leading-relaxed text-base'>Members can fill out this form or email the club directly at: 
@@ -87,7 +87,7 @@ const handleFormSubmit = async (e) => {
             {submited ? (
               <p className="text-green-500">Thank you for the message!</p>
               ) : (
-            <button type='submit'disabled={state.submitting} className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+            <button type='submit'disabled={state.submitting} className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
               )}
             </div>
           </form>

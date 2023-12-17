@@ -1,21 +1,21 @@
 
 
 const NewsAndRecapEmitter = () => {
-    const listeners = [];
+    const listeners = []
 
     const subscribe = (listener) => {
-      listeners.push(listener);
+      listeners.push(listener)
       return () => {
-        const index = listeners.indexOf(listener);
+        const index = listeners.indexOf(listener)
         if (index !== -1) {
-          listeners.splice(index, 1);
+          listeners.splice(index, 1)
         }
-      };
-    };
+      }
+    }
   
     const emit = () => {
-      listeners.forEach((listener) => listener());
-    };
+      listeners.forEach((listener) => listener())
+    }
   
     return {
       subscribe,

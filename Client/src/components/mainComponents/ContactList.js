@@ -3,10 +3,9 @@ import boatIcon from "../../images/9035720_boat_sharp_icon.png"
 const ContactList = () => {
   return (
     <section className="text-gray-600 body-font md:relative md:top-24">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-col text-center w-full mb-20">
-      <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Boat Club Officers</h1>
-      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">All of those that make the boat club function!</p>
+  <div className="container px-5 pt-24 md:pb-24 mx-auto">
+    <div className="flex flex-col text-center w-full mb-3">
+      <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-700">Boat Club Officers</h1>
     </div>
     <div className="flex flex-wrap -m-2">
       <div className="p-2 lg:w-1/3 md:w-1/2 w-full">

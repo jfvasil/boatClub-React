@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback} from 'react'
 import useAxiosPrivate from '../../hooks/useAxiosPrivate'
 import newsAndRecapEmitter from '../../eventEmitters/newsAndRecapEmitter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,8 +10,7 @@ const RecapItems = ({role}) => {
   const [recaps, setRecaps] = useState([])
   const axiosPrivate = useAxiosPrivate()
   
-
-    const fetchRecaps = async () => {
+    const fetchRecaps =  useCallback(async () => {
       try {
         const response = await axiosPrivate.get('/api/recaps')
       
@@ -20,8 +19,8 @@ const RecapItems = ({role}) => {
        catch (error) {
         console.error('Failed to fetch meeting recap:', error)
       }
-    }
-
+    },[axiosPrivate])
+  
     const handleDelete = async (recapId) => {
       try{
         const response = await axiosPrivate.delete(`/api/recaps/${recapId}`)
@@ -47,7 +46,7 @@ const RecapItems = ({role}) => {
       unsubscribe()
       
     }
-  })
+  },[fetchRecaps])
 
   if (recaps.length === 0) {
     return <div className='text-3xl w-full py-4 font-mono pl-4'>
@@ -68,7 +67,7 @@ const RecapItems = ({role}) => {
               </button>
              )} 
         <h2 className='text-xl font-bold mb-2"'>{recap.title}</h2>
-        <p className='italic text-gray-500 mb-2'>{recap.date}</p>
+        <p className='italic text-gray-500 mb-2'>{recap.date.slice(0, recap.date.indexOf('T'))}</p>
         <p>{recap.content}</p>
         <hr className='my-4 border-gray-300' />
       </div>

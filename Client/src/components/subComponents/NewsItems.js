@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import useAxiosPrivate from '../../hooks/useAxiosPrivate'
 import newsAndRecapEmitter from '../../eventEmitters/newsAndRecapEmitter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +10,7 @@ const NewsItems = ({role}) => {
   const axiosPrivate = useAxiosPrivate()
   
 
-    const fetchNewsItems = async () => {
+    const fetchNewsItems = useCallback(async () => {
       try {
         const response = await axiosPrivate.get('/api/news')
       
@@ -19,7 +19,7 @@ const NewsItems = ({role}) => {
        catch (error) {
         console.error('Failed to fetch the news', error)
       }
-    }
+    },[axiosPrivate])
 
     const handleDelete = async (newsId) => {
       try{
@@ -48,7 +48,7 @@ const NewsItems = ({role}) => {
       unsubscribe()
      
     }
-  })
+  },[fetchNewsItems])
 
   if (newsItems.length === 0) {
     return <div className='text-3xl w-full py-4 font-mono pl-4'>
@@ -72,7 +72,7 @@ const NewsItems = ({role}) => {
               </button>
              )} 
         <h2 className='text-xl font-bold mb-2"'>{item.title}</h2>
-        <p className='italic text-gray-500 mb-2'>{item.date}</p>
+        <p className='italic text-gray-500 mb-2'>{item.data.slice(0, item.date.inexOf('T'))}</p>
         <p>{item.content}</p>
         <hr className='my-4 border-gray-300' />
       </div>

@@ -2,9 +2,9 @@
 
 const Faq = () => {
   return (
-<section className="text-gray-600 pt-24 pb-8 md:py-24 body-font md:relative md:top-24 container md:mb-5">
+<section className="text-gray-600 pt-24 pb-8 md:py-24 md:relative md:top-24 container md:mb-5">
     <div className="my-5">
-    <h2 className="flex justify-center title-font font-semibold text-3xl">
+    <h2 className="flex justify-center font-semibold text-3xl">
     Frequently Asked Questions</h2>
     </div>
     <div className="join join-vertical w-screen">

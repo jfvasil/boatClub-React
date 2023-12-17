@@ -40,7 +40,9 @@ const PersistLogin = () => {
         {!persist ?
                 <Outlet />
             : isLoading ? 
-                <p>Loading...</p> : 
+                <p className='flex justify-center items-center min-h-screen text-4xl'>
+                <span class="loading loading-spinner loading-lg px-6"></span>
+                    Loading...</p> : 
                 <Outlet />}
         </>
     )
