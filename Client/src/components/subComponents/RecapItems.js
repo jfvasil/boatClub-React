@@ -49,9 +49,14 @@ const RecapItems = ({role}) => {
   },[fetchRecaps])
 
   if (recaps.length === 0) {
-    return <div className='text-3xl w-full py-4 font-mono pl-4'>
+    return <div className='text-2xl w-full py-4 pl-4 text-gray-600'>
      Nothing to display...
       </div>
+  }
+
+  const formatDate = (date) => {
+    const correctDate = new Date(date)
+    return correctDate.toLocaleDateString('en-US')
   }
 
   return (
@@ -67,7 +72,8 @@ const RecapItems = ({role}) => {
               </button>
              )} 
         <h2 className='text-xl font-bold mb-2"'>{recap.title}</h2>
-        <p className='italic text-gray-500 mb-2'>{recap.date.slice(0, recap.date.indexOf('T'))}</p>
+        <p className='italic text-gray-500 mb-2'><span className='text-gray-600 font-semibold' >Met on: </span> 
+        {formatDate(recap.date)}</p>
         <p>{recap.content}</p>
         <hr className='my-4 border-gray-300' />
       </div>
