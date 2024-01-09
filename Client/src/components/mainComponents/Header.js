@@ -23,7 +23,7 @@ const DropDownToggle = () => {
   return (
     <>
     <header className="text-gray-600 fixed left-0 inset-x-0 z-20 bg-white">
-  <div className='container flex flex-row justify-center pl-4'>
+  <div className=' flex flex-row justify-center  h-full'>
   <h1 className="flex font-sans items-center justify-center text-gray-800 ml-8"> 
     <img src={flag} alt = 'boat club logo' className='w-12 h-12'></img>
       <span className="ml-2 text-lg md:text-4xl">Lake Wickaboag Boat Club</span>

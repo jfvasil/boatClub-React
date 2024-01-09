@@ -10,8 +10,8 @@ const Form = ({req}) => {
     <>
     <Header req={req} />
     <ContactList />
-    <div className="container">
-      <div className="flex flex-col md:flex-row items-center justify-center md:justify-between">
+    <div>
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-beween">
       <Download file={application} 
         text={'Looking for an application to join?'} />
           <div className="divider lg:divider-horizontal pb-5 text-xl md:ml-12">

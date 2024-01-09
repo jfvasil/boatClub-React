@@ -59,6 +59,7 @@ const ContactList = () => {
           <div className="flex-grow">
             <h2 className="text-gray-900 title-font font-medium">Jenn Vasil</h2>
             <p className="text-gray-500">Secretary</p>
+            <p className="text-gray-500">Contact: Call or text 508-612-6358</p>
           </div>
         </div>
       </div>

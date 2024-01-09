@@ -4,11 +4,11 @@ import MainFooter from "../components/mainComponents/MainFooter"
 
 const RulesAndFaq = () => {
   return (
-    <>
+    <div className="min-h-screen">
     <Header />
     <Faq />
     <MainFooter />
-    </>
+    </div>
   )
 }
 

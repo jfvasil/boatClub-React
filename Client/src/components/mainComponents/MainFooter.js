@@ -14,7 +14,7 @@ const MainFooter = () => {
   }
 
   return (
-    <footer className="text-gray-600 body-font  bg-red-600 ">
+    <footer className="text-gray-600 body-font  bg-red-600">
   <div className="container mx-auto px-5 py-12 flex md:items-center  md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
       <p className="flex title-font  font-medium items-center md:justify-start justify-center text-gray-900">
